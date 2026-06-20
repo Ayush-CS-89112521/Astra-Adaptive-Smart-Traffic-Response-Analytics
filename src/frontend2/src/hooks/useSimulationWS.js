@@ -29,10 +29,19 @@ export const useSimulationWS = () => {
     }
 
     try {
-      const loc = window.location;
-      const protocol = loc.protocol === 'https:' ? 'wss:' : 'ws:';
-      // In development, Vite proxy routes /ws to ws://localhost:8000
-      const wsUrl = `${protocol}//${loc.host}/ws/simulation?token=${encodeURIComponent(token)}`;
+      const apiBase = import.meta.env.VITE_API_URL;
+      let wsUrl;
+      
+      if (apiBase) {
+        // If VITE_API_URL is e.g. "http://65.0.18.1:8000", convert to "ws://65.0.18.1:8000"
+        const wsProtocol = apiBase.startsWith('https') ? 'wss:' : 'ws:';
+        const host = apiBase.replace(/^https?:\/\//, '');
+        wsUrl = `${wsProtocol}//${host}/ws/simulation?token=${encodeURIComponent(token)}`;
+      } else {
+        const loc = window.location;
+        const protocol = loc.protocol === 'https:' ? 'wss:' : 'ws:';
+        wsUrl = `${protocol}//${loc.host}/ws/simulation?token=${encodeURIComponent(token)}`;
+      }
       
       const socket = new WebSocket(wsUrl);
       socketRef.current = socket;

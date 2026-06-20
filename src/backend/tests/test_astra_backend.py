@@ -22,7 +22,7 @@ Covers all 15 audit phases from BACKEND TESTING AND VALIDATION.md:
  Phase 15 — Production readiness gate checks
 
 Run with:
-    cd Theme 2/src/backend
+    cd src/backend
     ..\..\\.venv\\Scripts\\python -m pytest tests/test_astra_backend.py -v --tb=short
 """
 

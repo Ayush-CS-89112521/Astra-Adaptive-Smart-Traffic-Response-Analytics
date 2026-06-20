@@ -6,10 +6,10 @@ This guide provides instructions on how to run the Adaptive Smart Traffic Respon
 
 ## Method 1: Using the Automated Batch Script (Recommended for Windows)
 
-A startup batch script [run_project.bat](file:///c:/Users/SeginusAlpha/Desktop/FlipKart%20Gridlock%202.0%20Round%202%20frontend2/run_project.bat) is provided in the root directory. It runs the ML pipeline to prepare models, then starts the FastAPI backend and Vite frontend servers in separate windows.
+A startup batch script [run_project.bat](run_project.bat) is provided in the root directory. It runs the ML pipeline to prepare models, then starts the FastAPI backend and Vite frontend servers in separate windows.
 
 ### Steps:
-1. Open a command prompt or file explorer in the root folder `FlipKart Gridlock 2.0 Round 2 frontend2`.
+1. Open a command prompt or file explorer in the cloned project root folder.
 2. Double-click or execute:
    ```cmd
    run_project.bat
@@ -27,7 +27,7 @@ If you prefer to run each component manually in separate terminal windows, follo
 
 ### 1. Run the Machine Learning Pipeline
 Prepare the required models and FAISS indices:
-1. Open a terminal in the `Theme 2` directory.
+1. Open a terminal in the project root directory.
 2. Activate the virtual environment:
    ```powershell
    # Windows PowerShell
@@ -40,7 +40,7 @@ Prepare the required models and FAISS indices:
 *(This exports the trained classifiers, similarity indices, and cluster metadata to `src/ml/models/`).*
 
 ### 2. Start the Backend Server
-1. Open a new terminal in the `Theme 2/src/backend` directory.
+1. Open a new terminal in the `src/backend` directory.
 2. Make sure the virtual environment is activated:
    ```powershell
    # Windows PowerShell
@@ -53,7 +53,7 @@ Prepare the required models and FAISS indices:
 *(The backend is now accessible at `http://127.0.0.1:8000`)*
 
 ### 3. Start the Frontend Dev Server
-1. Open a new terminal in the `Theme 2/src/frontend2` directory.
+1. Open a new terminal in the `src/frontend2` directory.
 2. Run npm dev script:
    ```bash
    npm run dev

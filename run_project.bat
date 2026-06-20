@@ -6,10 +6,12 @@ echo               ASTRA - Smart Traffic Response System Loader
 echo =======================================================================
 echo.
 
+:: Change directory to the folder containing this batch script
+cd /d "%~dp0"
+
 :: 1. Run ML Pipeline
 echo [1/3] Verifying and running ML Pipeline...
 echo ----------------------------------------------------
-cd "Theme 2"
 echo Running ML training/verification script...
 ".venv\Scripts\python.exe" -m src.ml.train_production_pipeline
 if %ERRORLEVEL% neq 0 (

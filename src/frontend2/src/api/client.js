@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const apiBase = import.meta.env.VITE_API_URL || '';
+
 const client = axios.create({
-  baseURL: '/api/v1',
+  baseURL: `${apiBase}/api/v1`,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -36,7 +38,7 @@ export const ensureAuthToken = async () => {
   if (token && !isTokenExpired(token)) return token;
 
   try {
-    const res = await axios.post('/api/v1/auth/token', {
+    const res = await axios.post(`${apiBase}/api/v1/auth/token`, {
       username: 'operator@astra.demo',
       password: 'AstraOps2024!',
     });
