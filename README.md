@@ -7,14 +7,14 @@ ASTRA (Adaptive Smart Traffic Response & Analytics) — CatBoost severity classi
 
 ##  Visual Showcase & Dashboard Gallery
 
-### 1. Spatial Map
+### 1. Portal Entrance
+A clean, premium portal entrance provides immediate status cards indicating current active events, resolution rate, and system performance metrics.
+![Portal Entry](docs/screenshots/portal_entry.png)
+
+### 2. Spatial Map
 The **Spatial Map** displays live geographic traffic density clusters in Bengaluru using HDBSCAN spatial clustering. Operators can visualize traffic hot spots, inspect individual cluster telemetry, check dispatch station statuses, and calculate optimal route diversions directly on the interactive map.
 ![Spatial Map](docs/screenshots/operations_dashboard.png)
 ![Spatial Map](docs/screenshots/Spatial_Map.png)
-
-### 2. Portal Entrance
-A clean, premium portal entrance provides immediate status cards indicating current active events, resolution rate, and system performance metrics.
-![Portal Entry](docs/screenshots/portal_entry.png)
 
 ### 3. Simulation Console
 The **Simulation Console** is the main dashboard interface where traffic coordinators log road incidents. By inputting details such as event type, primary cause, vehicles involved, and semantic incident descriptions, the console computes the immediate operational risk, queue build-ups, and generates dispatch directives (officers, barricades, and tow trucks).
