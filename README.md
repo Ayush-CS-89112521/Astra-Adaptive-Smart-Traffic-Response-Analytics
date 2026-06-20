@@ -29,9 +29,8 @@ Once an incident is submitted, ASTRA runs NetworkX Dijkstra routing on the Benga
 ASTRA provides full explainability for its models using native C++ SHAP value calculations. High-risk features (such as geographical regions or specific corridors) are exposed in real-time.
 ![SHAP Diagnostics](docs/screenshots/shap_diagnostics.png)
 
-> [!NOTE]
-> **Data Engineering & Optimization Note**:
-> The raw dataset supplied by the hackathon coordinators (4.54 MB) was heavily cleansed and optimized for production. Features containing the least amount of data (highly sparse columns like `cargo_material` and `age_of_truck`), duplicate features, and false/redundant database audit records were stripped, retaining only 18 high-signal features and reducing the training dataset footprint by nearly 50% (to 2.34 MB). Furthermore, mixed-language Kannada descriptions were standardized and translated entirely to English to ensure highly accurate semantic vectorization under the SentenceTransformer `all-MiniLM-L6-v2` model.
+ **Data Engineering & Optimization Note**:
+ The raw dataset supplied by the hackathon coordinators (4.54 MB) was heavily cleansed and optimized for production. Features containing the least amount of data (highly sparse columns like `cargo_material` and `age_of_truck`), duplicate features, and false/redundant database audit records were stripped, retaining only 18 high-signal features and reducing the training dataset footprint by nearly 50% (to 2.34 MB). Furthermore, mixed-language Kannada descriptions were standardized and translated entirely to English to ensure highly accurate semantic vectorization under the SentenceTransformer `all-MiniLM-L6-v2` model.
 
 
 ---
