@@ -7,19 +7,25 @@ ASTRA (Adaptive Smart Traffic Response & Analytics) — CatBoost severity classi
 
 ##  Visual Showcase & Dashboard Gallery
 
-### 1. Operations Telemetry Dashboard
-The **Operations Telemetry Dashboard** monitors the live health of all system components. It displays the active cache provider, hit rates, and the readiness of the underlying machine learning models and engines.
-![Operations Dashboard](docs/screenshots/operations_dashboard.png)
+### 1. Spatial Map
+The **Spatial Map** displays live geographic traffic density clusters in Bengaluru using HDBSCAN spatial clustering. Operators can visualize traffic hot spots, inspect individual cluster telemetry, check dispatch station statuses, and calculate optimal route diversions directly on the interactive map.
+![Spatial Map](docs/screenshots/operations_dashboard.png)
+![Spatial Map](docs/screenshots/Spatial_Map.png)
 
 ### 2. Portal Entrance
 A clean, premium portal entrance provides immediate status cards indicating current active events, resolution rate, and system performance metrics.
 ![Portal Entry](docs/screenshots/portal_entry.png)
 
-### 3. Simulation Map & Active Routing
+### 3. Simulation Console
+The **Simulation Console** is the main dashboard interface where traffic coordinators log road incidents. By inputting details such as event type, primary cause, vehicles involved, and semantic incident descriptions, the console computes the immediate operational risk, queue build-ups, and generates dispatch directives (officers, barricades, and tow trucks).
+![Simulation Console](docs/screenshots/Simulation_Console.png)
+![Simulation Console](docs/screenshots/Simulation_Console_Results.png)
+
+### 4. Simulation Map & Active Routing
 Once an incident is submitted, ASTRA runs NetworkX Dijkstra routing on the Bengaluru road network graph to calculate and display the optimal bypass route (orange dotted line) along with estimated delays and queue lengths.
 ![Simulation Map](docs/screenshots/simulation_map.png)
 
-### 4. Machine Learning & SHAP Diagnostics
+### 5. Machine Learning & SHAP Diagnostics
 ASTRA provides full explainability for its models using native C++ SHAP value calculations. High-risk features (such as geographical regions or specific corridors) are exposed in real-time.
 ![SHAP Diagnostics](docs/screenshots/shap_diagnostics.png)
 
@@ -152,4 +158,5 @@ This script automatically:
 
 5.  **Access the Dashboard**:
     Open [http://localhost:5174](http://localhost:5174) in your browser.
-
+    *   **Operator Username**: `operator@astra.demo`
+    *   **Operator Password**: `AstraOps2024!`
