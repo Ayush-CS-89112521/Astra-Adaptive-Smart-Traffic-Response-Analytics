@@ -7,14 +7,14 @@ ASTRA (Adaptive Smart Traffic Response & Analytics) — CatBoost severity classi
 
 ##  Visual Showcase & Dashboard Gallery
 
-### 1. Portal Entrance
-A clean, premium portal entrance provides immediate status cards indicating current active events, resolution rate, and system performance metrics.
-![Portal Entry](docs/screenshots/portal_entry.png)
-
-### 2. Spatial Map
+### 1. Spatial Map
 The **Spatial Map** displays live geographic traffic density clusters in Bengaluru using HDBSCAN spatial clustering. Operators can visualize traffic hot spots, inspect individual cluster telemetry, check dispatch station statuses, and calculate optimal route diversions directly on the interactive map.
 ![Spatial Map](docs/screenshots/operations_dashboard.png)
 ![Spatial Map](docs/screenshots/Spatial_Map.png)
+
+### 2. Portal Entrance
+A clean, premium portal entrance provides immediate status cards indicating current active events, resolution rate, and system performance metrics.
+![Portal Entry](docs/screenshots/portal_entry.png)
 
 ### 3. Simulation Console
 The **Simulation Console** is the main dashboard interface where traffic coordinators log road incidents. By inputting details such as event type, primary cause, vehicles involved, and semantic incident descriptions, the console computes the immediate operational risk, queue build-ups, and generates dispatch directives (officers, barricades, and tow trucks).
@@ -28,6 +28,10 @@ Once an incident is submitted, ASTRA runs NetworkX Dijkstra routing on the Benga
 ### 5. Machine Learning & SHAP Diagnostics
 ASTRA provides full explainability for its models using native C++ SHAP value calculations. High-risk features (such as geographical regions or specific corridors) are exposed in real-time.
 ![SHAP Diagnostics](docs/screenshots/shap_diagnostics.png)
+
+> [!NOTE]
+> **Data Engineering & Optimization Note**:
+> The raw dataset supplied by the hackathon coordinators (4.54 MB) was heavily cleansed and optimized for production. Features containing the least amount of data (highly sparse columns like `cargo_material` and `age_of_truck`), duplicate features, and false/redundant database audit records were stripped, retaining only 18 high-signal features and reducing the training dataset footprint by nearly 50% (to 2.34 MB). Furthermore, mixed-language Kannada descriptions were standardized and translated entirely to English to ensure highly accurate semantic vectorization under the SentenceTransformer `all-MiniLM-L6-v2` model.
 
 
 ---
@@ -71,27 +75,35 @@ The system is split into three primary layers, integrated with high-efficiency c
 └──────────────────────────────────────────────────────┘
 ```
 
-### 1. Frontend (React + Vite)
-*   **Routing & Map**: Leaflet interactive maps representing Bengaluru's grid network.
-*   **State Management**: Zustand global store with integrated WebSocket retry and reconnect logic.
-*   **Operational Monitoring**: Automatically polls `/health/*` endpoints every 3 seconds.
+### 1. Frontend Layer (React + Vite)
+*   **Mapping**: Uses React-Leaflet to render interactive geospatial layers showing traffic density hotspots and calculated bypass routes on top of Bengaluru's coordinate grid.
+*   **State & Streaming**: Utilizes Zustand for lightweight global state management and persistent WebSocket connections to stream simulation logs, updates, and telemetry with integrated retry/reconnect logic.
+*   **Design System**: Styled with vanilla CSS and Tailwind CSS, featuring custom responsive grids, light/dark mode compliance, and custom-styled SVG icons.
+*   **Operational Monitoring**: Automatically polls `/health/*` endpoints every 3 seconds to check system status.
 
-### 2. Backend (FastAPI + Python 3.12)
-*   **Concurrency**: Uvicorn running with 4 parallel worker processes.
-*   **Threading**: Offloads CPU-bound ML inference paths to a `ThreadPoolExecutor` (4 workers) to prevent event loop starvation.
-*   **Rate Limiting**: SlowAPI limits endpoint access to 60 requests/minute per client.
-*   **Authentication**: HS256-signed JWT tokens for traffic operators, supervisors, and administrators.
+### 2. Backend & API Layer (FastAPI)
+*   **Concurrency**: Powered by FastAPI running under Uvicorn with parallel worker processes (4 workers).
+*   **Async Offloading**: Offloads heavy, CPU-bound ML predictions and graph routing tasks to a dedicated `ThreadPoolExecutor` (4 workers) to avoid event loop blocking and starvation.
+*   **6-Tier Caching**: Implements a process-isolated, versioned in-memory LRU caching system (1,000-item cap per cache tier) with automated fallback. Cache keys are structured as:
+    `astra:{api_version}:{model_hash}:{build_id}:{cache_name}:{payload_hash}`
 
 ### 3. ML Layer (CatBoost, FAISS, SentenceTransformer)
 *   **Severity Classifier & Road Closure Predictor**: Powered by pre-compiled CatBoost `.cbm` models (~1ms inference).
 *   **Semantic Similarity**: Encodes unstructured incident descriptions to 384-dimensional vectors via SentenceTransformer (`all-MiniLM-L6-v2`), projected to 64 dimensions via PCA.
-*   **Similarity Search**: Conducts L2 L2-flat similarity search using a FAISS index (~0.44ms).
+*   **Similarity Search**: Conducts L2 flat similarity search using a FAISS index (~0.44ms).
 *   **Explainability**: Utilizes CatBoost C++ native SHAP calculations offloaded to FastAPI `BackgroundTasks`.
 
-### 4. Resilient Caching System
-*   **6-Tier Cache**: Process-isolated in-memory LRU cache (1,000-item cap) with automated fallback.
-*   **Cache Keys**: Versioned keys prevent namespace collisions across deployment builds:
-    `astra:{api_version}:{model_hash}:{build_id}:{cache_name}:{payload_hash}`
+### 4. Security & Deployment Architecture
+
+#### A. Security Hardening
+*   **CORS Locking**: Backend whitelists only trusted web origins (e.g., the Vercel app domain) via `CORSMiddleware` to prevent unauthorized cross-origin requests.
+*   **Stateless JWT Authentication**: Access is protected using cryptographically signed HS256 JWT bearer tokens automatically refreshed by the frontend Axios interceptors.
+*   **Rate Limiting**: SlowAPI middleware caps request frequencies (60 requests/minute per client) to protect against Denial of Service (DoS) attempts.
+
+#### B. Deployment Specs
+*   **Frontend**: Hosted statically on Vercel, using `vercel.json` rewrite rules to handle Single Page Application (SPA) routing.
+*   **Backend**: Deployed on an AWS EC2 `t3.small` instance under a systemd daemon (`astra-backend.service`).
+*   **SSL Termination**: Nginx acts as a reverse proxy, securing connections with Let's Encrypt SSL certificates (configured via Certbot) using the secure wildcard domain `https://65-0-18-1.sslip.io`.
 
 ---
 
@@ -158,3 +170,4 @@ This script automatically:
 
 5.  **Access the Dashboard**:
     Open [http://localhost:5174](http://localhost:5174) in your browser.
+
