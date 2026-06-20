@@ -1,0 +1,2046 @@
+{
+    "-1": {
+        "total_incidents": 1733,
+        "closure_rate": 0.108482,
+        "high_severity_rate": 0.477784,
+        "centroid_lat": 12.987608,
+        "centroid_lon": 77.590837
+    },
+    "0": {
+        "total_incidents": 12,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.188916,
+        "centroid_lon": 77.692865
+    },
+    "1": {
+        "total_incidents": 25,
+        "closure_rate": 0.04,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.883432,
+        "centroid_lon": 77.751352
+    },
+    "2": {
+        "total_incidents": 30,
+        "closure_rate": 0.033333,
+        "high_severity_rate": 0.033333,
+        "centroid_lat": 13.246974,
+        "centroid_lon": 77.70581
+    },
+    "3": {
+        "total_incidents": 13,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.538462,
+        "centroid_lat": 13.101748,
+        "centroid_lon": 77.631441
+    },
+    "4": {
+        "total_incidents": 10,
+        "closure_rate": 0.4,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.911699,
+        "centroid_lon": 77.483819
+    },
+    "5": {
+        "total_incidents": 13,
+        "closure_rate": 0.307692,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.903865,
+        "centroid_lon": 77.470315
+    },
+    "6": {
+        "total_incidents": 23,
+        "closure_rate": 0.173913,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.045034,
+        "centroid_lon": 77.749038
+    },
+    "7": {
+        "total_incidents": 15,
+        "closure_rate": 0.133333,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.90351,
+        "centroid_lon": 77.704551
+    },
+    "8": {
+        "total_incidents": 10,
+        "closure_rate": 0.1,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.065233,
+        "centroid_lon": 77.570986
+    },
+    "9": {
+        "total_incidents": 27,
+        "closure_rate": 0.111111,
+        "high_severity_rate": 0.037037,
+        "centroid_lat": 12.872513,
+        "centroid_lon": 77.535693
+    },
+    "10": {
+        "total_incidents": 13,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.179324,
+        "centroid_lon": 77.637828
+    },
+    "11": {
+        "total_incidents": 11,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.909091,
+        "centroid_lat": 13.190901,
+        "centroid_lon": 77.646178
+    },
+    "12": {
+        "total_incidents": 32,
+        "closure_rate": 0.03125,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.941914,
+        "centroid_lon": 77.747177
+    },
+    "13": {
+        "total_incidents": 16,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.938891,
+        "centroid_lon": 77.74735
+    },
+    "14": {
+        "total_incidents": 12,
+        "closure_rate": 0.083333,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.938221,
+        "centroid_lon": 77.74678
+    },
+    "15": {
+        "total_incidents": 11,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.840813,
+        "centroid_lon": 77.649486
+    },
+    "16": {
+        "total_incidents": 11,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.89005,
+        "centroid_lon": 77.564008
+    },
+    "17": {
+        "total_incidents": 24,
+        "closure_rate": 0.125,
+        "high_severity_rate": 0.041667,
+        "centroid_lat": 13.088049,
+        "centroid_lon": 77.555731
+    },
+    "18": {
+        "total_incidents": 17,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.87442,
+        "centroid_lon": 77.624988
+    },
+    "19": {
+        "total_incidents": 28,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.000716,
+        "centroid_lon": 77.757459
+    },
+    "20": {
+        "total_incidents": 18,
+        "closure_rate": 0.055556,
+        "high_severity_rate": 0.555556,
+        "centroid_lat": 12.959352,
+        "centroid_lon": 77.746675
+    },
+    "21": {
+        "total_incidents": 11,
+        "closure_rate": 0.454545,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.022411,
+        "centroid_lon": 77.602059
+    },
+    "22": {
+        "total_incidents": 18,
+        "closure_rate": 0.222222,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.994606,
+        "centroid_lon": 77.716732
+    },
+    "23": {
+        "total_incidents": 18,
+        "closure_rate": 0.111111,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.987729,
+        "centroid_lon": 77.733366
+    },
+    "24": {
+        "total_incidents": 29,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.981956,
+        "centroid_lon": 77.751991
+    },
+    "25": {
+        "total_incidents": 11,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.969412,
+        "centroid_lon": 77.749796
+    },
+    "26": {
+        "total_incidents": 10,
+        "closure_rate": 0.1,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.012738,
+        "centroid_lon": 77.506775
+    },
+    "27": {
+        "total_incidents": 24,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.877831,
+        "centroid_lon": 77.612053
+    },
+    "28": {
+        "total_incidents": 21,
+        "closure_rate": 0.095238,
+        "high_severity_rate": 0.047619,
+        "centroid_lat": 13.067046,
+        "centroid_lon": 77.646241
+    },
+    "29": {
+        "total_incidents": 15,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.819993,
+        "centroid_lon": 77.687868
+    },
+    "30": {
+        "total_incidents": 13,
+        "closure_rate": 0.230769,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.053498,
+        "centroid_lon": 77.646221
+    },
+    "31": {
+        "total_incidents": 23,
+        "closure_rate": 0.173913,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.047421,
+        "centroid_lon": 77.644801
+    },
+    "32": {
+        "total_incidents": 28,
+        "closure_rate": 0.107143,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.039481,
+        "centroid_lon": 77.641501
+    },
+    "33": {
+        "total_incidents": 12,
+        "closure_rate": 0.25,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.024636,
+        "centroid_lon": 77.61986
+    },
+    "34": {
+        "total_incidents": 13,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.057054,
+        "centroid_lon": 77.632337
+    },
+    "35": {
+        "total_incidents": 12,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.855487,
+        "centroid_lon": 77.664762
+    },
+    "36": {
+        "total_incidents": 29,
+        "closure_rate": 0.034483,
+        "high_severity_rate": 0.034483,
+        "centroid_lat": 12.840856,
+        "centroid_lon": 77.676175
+    },
+    "37": {
+        "total_incidents": 18,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.113449,
+        "centroid_lon": 77.579043
+    },
+    "38": {
+        "total_incidents": 12,
+        "closure_rate": 0.083333,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.057675,
+        "centroid_lon": 77.546327
+    },
+    "39": {
+        "total_incidents": 30,
+        "closure_rate": 0.033333,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.936184,
+        "centroid_lon": 77.705466
+    },
+    "40": {
+        "total_incidents": 15,
+        "closure_rate": 0.133333,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.916313,
+        "centroid_lon": 77.633428
+    },
+    "41": {
+        "total_incidents": 14,
+        "closure_rate": 0.285714,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.923272,
+        "centroid_lon": 77.647547
+    },
+    "42": {
+        "total_incidents": 11,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.911024,
+        "centroid_lon": 77.551884
+    },
+    "43": {
+        "total_incidents": 24,
+        "closure_rate": 0.041667,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.903736,
+        "centroid_lon": 77.544772
+    },
+    "44": {
+        "total_incidents": 19,
+        "closure_rate": 0.052632,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.956032,
+        "centroid_lon": 77.693143
+    },
+    "45": {
+        "total_incidents": 13,
+        "closure_rate": 0.076923,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.952392,
+        "centroid_lon": 77.621359
+    },
+    "46": {
+        "total_incidents": 14,
+        "closure_rate": 0.071429,
+        "high_severity_rate": 0.928571,
+        "centroid_lat": 12.962335,
+        "centroid_lon": 77.53476
+    },
+    "47": {
+        "total_incidents": 10,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.956383,
+        "centroid_lon": 77.709273
+    },
+    "48": {
+        "total_incidents": 21,
+        "closure_rate": 0.047619,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.95557,
+        "centroid_lon": 77.717435
+    },
+    "49": {
+        "total_incidents": 10,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.942239,
+        "centroid_lon": 77.62215
+    },
+    "50": {
+        "total_incidents": 24,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.922256,
+        "centroid_lon": 77.659385
+    },
+    "51": {
+        "total_incidents": 19,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.921465,
+        "centroid_lon": 77.667269
+    },
+    "52": {
+        "total_incidents": 24,
+        "closure_rate": 0.166667,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.927708,
+        "centroid_lon": 77.680139
+    },
+    "53": {
+        "total_incidents": 122,
+        "closure_rate": 0.02459,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.96915,
+        "centroid_lon": 77.700837
+    },
+    "54": {
+        "total_incidents": 14,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.973004,
+        "centroid_lon": 77.698715
+    },
+    "55": {
+        "total_incidents": 11,
+        "closure_rate": 0.090909,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.942999,
+        "centroid_lon": 77.697538
+    },
+    "56": {
+        "total_incidents": 17,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.950836,
+        "centroid_lon": 77.699706
+    },
+    "57": {
+        "total_incidents": 18,
+        "closure_rate": 0.388889,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.956314,
+        "centroid_lon": 77.701167
+    },
+    "58": {
+        "total_incidents": 15,
+        "closure_rate": 0.133333,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.938641,
+        "centroid_lon": 77.694516
+    },
+    "59": {
+        "total_incidents": 27,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.931365,
+        "centroid_lon": 77.686901
+    },
+    "60": {
+        "total_incidents": 11,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.933566,
+        "centroid_lon": 77.689003
+    },
+    "61": {
+        "total_incidents": 10,
+        "closure_rate": 0.1,
+        "high_severity_rate": 0.1,
+        "centroid_lat": 12.965709,
+        "centroid_lon": 77.661282
+    },
+    "62": {
+        "total_incidents": 18,
+        "closure_rate": 0.333333,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.987371,
+        "centroid_lon": 77.475156
+    },
+    "63": {
+        "total_incidents": 12,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.938494,
+        "centroid_lon": 77.634744
+    },
+    "64": {
+        "total_incidents": 15,
+        "closure_rate": 0.2,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.03184,
+        "centroid_lon": 77.560705
+    },
+    "65": {
+        "total_incidents": 10,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.052125,
+        "centroid_lon": 77.539768
+    },
+    "66": {
+        "total_incidents": 10,
+        "closure_rate": 0.1,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.951927,
+        "centroid_lon": 77.499773
+    },
+    "67": {
+        "total_incidents": 16,
+        "closure_rate": 0.0625,
+        "high_severity_rate": 0.6875,
+        "centroid_lat": 12.98718,
+        "centroid_lon": 77.491248
+    },
+    "68": {
+        "total_incidents": 18,
+        "closure_rate": 0.111111,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.959968,
+        "centroid_lon": 77.504298
+    },
+    "69": {
+        "total_incidents": 10,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.928107,
+        "centroid_lon": 77.546138
+    },
+    "70": {
+        "total_incidents": 19,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.925564,
+        "centroid_lon": 77.549712
+    },
+    "71": {
+        "total_incidents": 13,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.966861,
+        "centroid_lon": 77.50471
+    },
+    "72": {
+        "total_incidents": 24,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.987136,
+        "centroid_lon": 77.519824
+    },
+    "73": {
+        "total_incidents": 16,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.985582,
+        "centroid_lon": 77.525805
+    },
+    "74": {
+        "total_incidents": 18,
+        "closure_rate": 0.055556,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.983537,
+        "centroid_lon": 77.529618
+    },
+    "75": {
+        "total_incidents": 10,
+        "closure_rate": 0.1,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.92463,
+        "centroid_lon": 77.627865
+    },
+    "76": {
+        "total_incidents": 12,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.979666,
+        "centroid_lon": 77.515979
+    },
+    "77": {
+        "total_incidents": 27,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.990125,
+        "centroid_lon": 77.503975
+    },
+    "78": {
+        "total_incidents": 10,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.989663,
+        "centroid_lon": 77.50182
+    },
+    "79": {
+        "total_incidents": 11,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.988336,
+        "centroid_lon": 77.510492
+    },
+    "80": {
+        "total_incidents": 32,
+        "closure_rate": 0.03125,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.989004,
+        "centroid_lon": 77.507745
+    },
+    "81": {
+        "total_incidents": 41,
+        "closure_rate": 0.02439,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.961395,
+        "centroid_lon": 77.514486
+    },
+    "82": {
+        "total_incidents": 11,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.090909,
+        "centroid_lat": 12.973334,
+        "centroid_lon": 77.51289
+    },
+    "83": {
+        "total_incidents": 24,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.007329,
+        "centroid_lon": 77.527437
+    },
+    "84": {
+        "total_incidents": 30,
+        "closure_rate": 0.033333,
+        "high_severity_rate": 0.766667,
+        "centroid_lat": 12.907348,
+        "centroid_lon": 77.585528
+    },
+    "85": {
+        "total_incidents": 25,
+        "closure_rate": 0.08,
+        "high_severity_rate": 0.68,
+        "centroid_lat": 12.904285,
+        "centroid_lon": 77.573599
+    },
+    "86": {
+        "total_incidents": 32,
+        "closure_rate": 0.1875,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.941914,
+        "centroid_lon": 77.576024
+    },
+    "87": {
+        "total_incidents": 19,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.074404,
+        "centroid_lon": 77.437585
+    },
+    "88": {
+        "total_incidents": 14,
+        "closure_rate": 0.071429,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.069365,
+        "centroid_lon": 77.446906
+    },
+    "89": {
+        "total_incidents": 14,
+        "closure_rate": 0.285714,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.925353,
+        "centroid_lon": 77.580908
+    },
+    "90": {
+        "total_incidents": 28,
+        "closure_rate": 0.107143,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.056895,
+        "centroid_lon": 77.473417
+    },
+    "91": {
+        "total_incidents": 18,
+        "closure_rate": 0.111111,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.917032,
+        "centroid_lon": 77.5732
+    },
+    "92": {
+        "total_incidents": 13,
+        "closure_rate": 0.153846,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.05853,
+        "centroid_lon": 77.467155
+    },
+    "93": {
+        "total_incidents": 18,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.91464,
+        "centroid_lon": 77.565445
+    },
+    "94": {
+        "total_incidents": 10,
+        "closure_rate": 0.1,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.065053,
+        "centroid_lon": 77.454216
+    },
+    "95": {
+        "total_incidents": 13,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.067125,
+        "centroid_lon": 77.450893
+    },
+    "96": {
+        "total_incidents": 12,
+        "closure_rate": 0.083333,
+        "high_severity_rate": 0.166667,
+        "centroid_lat": 12.915553,
+        "centroid_lon": 77.569409
+    },
+    "97": {
+        "total_incidents": 20,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.912807,
+        "centroid_lon": 77.567236
+    },
+    "98": {
+        "total_incidents": 22,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.060441,
+        "centroid_lon": 77.462311
+    },
+    "99": {
+        "total_incidents": 12,
+        "closure_rate": 0.166667,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.062425,
+        "centroid_lon": 77.458988
+    },
+    "100": {
+        "total_incidents": 33,
+        "closure_rate": 0.151515,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.916949,
+        "centroid_lon": 77.586168
+    },
+    "101": {
+        "total_incidents": 54,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.918647,
+        "centroid_lon": 77.58946
+    },
+    "102": {
+        "total_incidents": 26,
+        "closure_rate": 0.038462,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.959352,
+        "centroid_lon": 77.654263
+    },
+    "103": {
+        "total_incidents": 27,
+        "closure_rate": 0.111111,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.958092,
+        "centroid_lon": 77.605845
+    },
+    "104": {
+        "total_incidents": 19,
+        "closure_rate": 0.263158,
+        "high_severity_rate": 0.473684,
+        "centroid_lat": 12.948143,
+        "centroid_lon": 77.60405
+    },
+    "105": {
+        "total_incidents": 17,
+        "closure_rate": 0.058824,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.870384,
+        "centroid_lon": 77.653015
+    },
+    "106": {
+        "total_incidents": 17,
+        "closure_rate": 0.235294,
+        "high_severity_rate": 0.588235,
+        "centroid_lat": 13.002287,
+        "centroid_lon": 77.618798
+    },
+    "107": {
+        "total_incidents": 17,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.994802,
+        "centroid_lon": 77.6165
+    },
+    "108": {
+        "total_incidents": 28,
+        "closure_rate": 0.071429,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.958282,
+        "centroid_lon": 77.574162
+    },
+    "109": {
+        "total_incidents": 10,
+        "closure_rate": 0.1,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.949668,
+        "centroid_lon": 77.573817
+    },
+    "110": {
+        "total_incidents": 14,
+        "closure_rate": 0.142857,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.993827,
+        "centroid_lon": 77.606887
+    },
+    "111": {
+        "total_incidents": 21,
+        "closure_rate": 0.380952,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.000333,
+        "centroid_lon": 77.611526
+    },
+    "112": {
+        "total_incidents": 30,
+        "closure_rate": 0.066667,
+        "high_severity_rate": 0.8,
+        "centroid_lat": 12.854967,
+        "centroid_lon": 77.588792
+    },
+    "113": {
+        "total_incidents": 27,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.927146,
+        "centroid_lon": 77.600249
+    },
+    "114": {
+        "total_incidents": 13,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.86803,
+        "centroid_lon": 77.592548
+    },
+    "115": {
+        "total_incidents": 10,
+        "closure_rate": 0.2,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.915996,
+        "centroid_lon": 77.616188
+    },
+    "116": {
+        "total_incidents": 16,
+        "closure_rate": 0.125,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.02031,
+        "centroid_lon": 77.532332
+    },
+    "117": {
+        "total_incidents": 11,
+        "closure_rate": 0.181818,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.021039,
+        "centroid_lon": 77.528311
+    },
+    "118": {
+        "total_incidents": 12,
+        "closure_rate": 0.083333,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.008135,
+        "centroid_lon": 77.548605
+    },
+    "119": {
+        "total_incidents": 35,
+        "closure_rate": 0.114286,
+        "high_severity_rate": 0.971429,
+        "centroid_lat": 12.997867,
+        "centroid_lon": 77.551358
+    },
+    "120": {
+        "total_incidents": 28,
+        "closure_rate": 0.035714,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.995548,
+        "centroid_lon": 77.59559
+    },
+    "121": {
+        "total_incidents": 21,
+        "closure_rate": 0.047619,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.007975,
+        "centroid_lon": 77.591963
+    },
+    "122": {
+        "total_incidents": 17,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.052291,
+        "centroid_lon": 77.487654
+    },
+    "123": {
+        "total_incidents": 31,
+        "closure_rate": 0.096774,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.905666,
+        "centroid_lon": 77.601502
+    },
+    "124": {
+        "total_incidents": 18,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.878774,
+        "centroid_lon": 77.595523
+    },
+    "125": {
+        "total_incidents": 13,
+        "closure_rate": 0.076923,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.913158,
+        "centroid_lon": 77.599935
+    },
+    "126": {
+        "total_incidents": 15,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.333333,
+        "centroid_lat": 12.916808,
+        "centroid_lon": 77.595889
+    },
+    "127": {
+        "total_incidents": 23,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.890923,
+        "centroid_lon": 77.598192
+    },
+    "128": {
+        "total_incidents": 31,
+        "closure_rate": 0.129032,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.049063,
+        "centroid_lon": 77.496659
+    },
+    "129": {
+        "total_incidents": 11,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.897311,
+        "centroid_lon": 77.600003
+    },
+    "130": {
+        "total_incidents": 11,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.011796,
+        "centroid_lon": 77.569223
+    },
+    "131": {
+        "total_incidents": 16,
+        "closure_rate": 0.0625,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.877477,
+        "centroid_lon": 77.646824
+    },
+    "132": {
+        "total_incidents": 59,
+        "closure_rate": 0.033898,
+        "high_severity_rate": 0.915254,
+        "centroid_lat": 13.045269,
+        "centroid_lon": 77.507339
+    },
+    "133": {
+        "total_incidents": 21,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.047169,
+        "centroid_lon": 77.501084
+    },
+    "134": {
+        "total_incidents": 12,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.901938,
+        "centroid_lon": 77.601086
+    },
+    "135": {
+        "total_incidents": 12,
+        "closure_rate": 0.083333,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.899847,
+        "centroid_lon": 77.600914
+    },
+    "136": {
+        "total_incidents": 22,
+        "closure_rate": 0.318182,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.014695,
+        "centroid_lon": 77.571917
+    },
+    "137": {
+        "total_incidents": 10,
+        "closure_rate": 0.2,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.014048,
+        "centroid_lon": 77.566655
+    },
+    "138": {
+        "total_incidents": 20,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.020878,
+        "centroid_lon": 77.552089
+    },
+    "139": {
+        "total_incidents": 22,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.013741,
+        "centroid_lon": 77.554282
+    },
+    "140": {
+        "total_incidents": 12,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.899852,
+        "centroid_lon": 77.633349
+    },
+    "141": {
+        "total_incidents": 20,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.889305,
+        "centroid_lon": 77.640191
+    },
+    "142": {
+        "total_incidents": 14,
+        "closure_rate": 0.071429,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.024669,
+        "centroid_lon": 77.717638
+    },
+    "143": {
+        "total_incidents": 28,
+        "closure_rate": 0.035714,
+        "high_severity_rate": 0.535714,
+        "centroid_lat": 12.935458,
+        "centroid_lon": 77.608107
+    },
+    "144": {
+        "total_incidents": 47,
+        "closure_rate": 0.255319,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.0198,
+        "centroid_lon": 77.709222
+    },
+    "145": {
+        "total_incidents": 11,
+        "closure_rate": 0.454545,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.016169,
+        "centroid_lon": 77.709309
+    },
+    "146": {
+        "total_incidents": 17,
+        "closure_rate": 0.058824,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.016023,
+        "centroid_lon": 77.562521
+    },
+    "147": {
+        "total_incidents": 29,
+        "closure_rate": 0.034483,
+        "high_severity_rate": 0.896552,
+        "centroid_lat": 12.972919,
+        "centroid_lon": 77.619568
+    },
+    "148": {
+        "total_incidents": 29,
+        "closure_rate": 0.103448,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.977423,
+        "centroid_lon": 77.627716
+    },
+    "149": {
+        "total_incidents": 43,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.927545,
+        "centroid_lon": 77.621133
+    },
+    "150": {
+        "total_incidents": 77,
+        "closure_rate": 0.012987,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.039775,
+        "centroid_lon": 77.518822
+    },
+    "151": {
+        "total_incidents": 21,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.04235,
+        "centroid_lon": 77.514882
+    },
+    "152": {
+        "total_incidents": 10,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.035687,
+        "centroid_lon": 77.526312
+    },
+    "153": {
+        "total_incidents": 28,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.03458,
+        "centroid_lon": 77.529753
+    },
+    "154": {
+        "total_incidents": 11,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.1407,
+        "centroid_lon": 77.617594
+    },
+    "155": {
+        "total_incidents": 16,
+        "closure_rate": 0.625,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.989693,
+        "centroid_lon": 77.663444
+    },
+    "156": {
+        "total_incidents": 42,
+        "closure_rate": 0.071429,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.018544,
+        "centroid_lon": 77.656452
+    },
+    "157": {
+        "total_incidents": 14,
+        "closure_rate": 0.142857,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.962222,
+        "centroid_lon": 77.641877
+    },
+    "158": {
+        "total_incidents": 14,
+        "closure_rate": 0.071429,
+        "high_severity_rate": 0.571429,
+        "centroid_lat": 12.961196,
+        "centroid_lon": 77.637087
+    },
+    "159": {
+        "total_incidents": 42,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.990993,
+        "centroid_lon": 77.656747
+    },
+    "160": {
+        "total_incidents": 11,
+        "closure_rate": 0.090909,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.965624,
+        "centroid_lon": 77.625103
+    },
+    "161": {
+        "total_incidents": 21,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.961839,
+        "centroid_lon": 77.630752
+    },
+    "162": {
+        "total_incidents": 11,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.017108,
+        "centroid_lon": 77.556934
+    },
+    "163": {
+        "total_incidents": 29,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.018333,
+        "centroid_lon": 77.558501
+    },
+    "164": {
+        "total_incidents": 22,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.026328,
+        "centroid_lon": 77.544112
+    },
+    "165": {
+        "total_incidents": 32,
+        "closure_rate": 0.03125,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.984071,
+        "centroid_lon": 77.640982
+    },
+    "166": {
+        "total_incidents": 38,
+        "closure_rate": 0.052632,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.98643,
+        "centroid_lon": 77.646937
+    },
+    "167": {
+        "total_incidents": 12,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.003571,
+        "centroid_lon": 77.663034
+    },
+    "168": {
+        "total_incidents": 12,
+        "closure_rate": 0.166667,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.009417,
+        "centroid_lon": 77.66232
+    },
+    "169": {
+        "total_incidents": 27,
+        "closure_rate": 0.074074,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.044369,
+        "centroid_lon": 77.55693
+    },
+    "170": {
+        "total_incidents": 28,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.892857,
+        "centroid_lat": 13.000635,
+        "centroid_lon": 77.676917
+    },
+    "171": {
+        "total_incidents": 18,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.166667,
+        "centroid_lat": 13.004687,
+        "centroid_lon": 77.684619
+    },
+    "172": {
+        "total_incidents": 16,
+        "closure_rate": 0.3125,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.036668,
+        "centroid_lon": 77.54161
+    },
+    "173": {
+        "total_incidents": 11,
+        "closure_rate": 0.090909,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.102381,
+        "centroid_lon": 77.585881
+    },
+    "174": {
+        "total_incidents": 33,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.99585,
+        "centroid_lon": 77.667391
+    },
+    "175": {
+        "total_incidents": 10,
+        "closure_rate": 0.1,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.997728,
+        "centroid_lon": 77.663746
+    },
+    "176": {
+        "total_incidents": 10,
+        "closure_rate": 0.3,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.006725,
+        "centroid_lon": 77.579192
+    },
+    "177": {
+        "total_incidents": 11,
+        "closure_rate": 0.181818,
+        "high_severity_rate": 0.636364,
+        "centroid_lat": 12.904061,
+        "centroid_lon": 77.627477
+    },
+    "178": {
+        "total_incidents": 26,
+        "closure_rate": 0.076923,
+        "high_severity_rate": 0.769231,
+        "centroid_lat": 12.97186,
+        "centroid_lon": 77.595327
+    },
+    "179": {
+        "total_incidents": 11,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.043036,
+        "centroid_lon": 77.551429
+    },
+    "180": {
+        "total_incidents": 16,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.043812,
+        "centroid_lon": 77.553803
+    },
+    "181": {
+        "total_incidents": 13,
+        "closure_rate": 0.076923,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.012859,
+        "centroid_lon": 77.699438
+    },
+    "182": {
+        "total_incidents": 64,
+        "closure_rate": 0.078125,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.913413,
+        "centroid_lon": 77.625113
+    },
+    "183": {
+        "total_incidents": 23,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.907364,
+        "centroid_lon": 77.628701
+    },
+    "184": {
+        "total_incidents": 30,
+        "closure_rate": 0.066667,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.008254,
+        "centroid_lon": 77.694033
+    },
+    "185": {
+        "total_incidents": 26,
+        "closure_rate": 0.115385,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.010115,
+        "centroid_lon": 77.697524
+    },
+    "186": {
+        "total_incidents": 25,
+        "closure_rate": 0.04,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.031942,
+        "centroid_lon": 77.534709
+    },
+    "187": {
+        "total_incidents": 32,
+        "closure_rate": 0.03125,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.029936,
+        "centroid_lon": 77.537651
+    },
+    "188": {
+        "total_incidents": 25,
+        "closure_rate": 0.04,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.029072,
+        "centroid_lon": 77.540025
+    },
+    "189": {
+        "total_incidents": 16,
+        "closure_rate": 0.125,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.04119,
+        "centroid_lon": 77.54571
+    },
+    "190": {
+        "total_incidents": 24,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.041649,
+        "centroid_lon": 77.547224
+    },
+    "191": {
+        "total_incidents": 16,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.920833,
+        "centroid_lon": 77.620518
+    },
+    "192": {
+        "total_incidents": 10,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.919119,
+        "centroid_lon": 77.621631
+    },
+    "193": {
+        "total_incidents": 13,
+        "closure_rate": 0.307692,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.000791,
+        "centroid_lon": 77.571129
+    },
+    "194": {
+        "total_incidents": 23,
+        "closure_rate": 0.086957,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.925071,
+        "centroid_lon": 77.617844
+    },
+    "195": {
+        "total_incidents": 17,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.92372,
+        "centroid_lon": 77.618716
+    },
+    "196": {
+        "total_incidents": 37,
+        "closure_rate": 0.027027,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.944121,
+        "centroid_lon": 77.527118
+    },
+    "197": {
+        "total_incidents": 10,
+        "closure_rate": 0.1,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.024463,
+        "centroid_lon": 77.6426
+    },
+    "198": {
+        "total_incidents": 17,
+        "closure_rate": 0.117647,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.935809,
+        "centroid_lon": 77.513155
+    },
+    "199": {
+        "total_incidents": 12,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.044882,
+        "centroid_lon": 77.581771
+    },
+    "200": {
+        "total_incidents": 31,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.044557,
+        "centroid_lon": 77.582912
+    },
+    "201": {
+        "total_incidents": 24,
+        "closure_rate": 0.083333,
+        "high_severity_rate": 0.666667,
+        "centroid_lat": 12.986637,
+        "centroid_lon": 77.551921
+    },
+    "202": {
+        "total_incidents": 22,
+        "closure_rate": 0.090909,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.9381,
+        "centroid_lon": 77.521554
+    },
+    "203": {
+        "total_incidents": 19,
+        "closure_rate": 0.105263,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.936493,
+        "centroid_lon": 77.518197
+    },
+    "204": {
+        "total_incidents": 13,
+        "closure_rate": 0.076923,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.981658,
+        "centroid_lon": 77.61003
+    },
+    "205": {
+        "total_incidents": 54,
+        "closure_rate": 0.185185,
+        "high_severity_rate": 0.018519,
+        "centroid_lat": 12.944466,
+        "centroid_lon": 77.596591
+    },
+    "206": {
+        "total_incidents": 19,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.368421,
+        "centroid_lat": 13.097227,
+        "centroid_lon": 77.592294
+    },
+    "207": {
+        "total_incidents": 24,
+        "closure_rate": 0.083333,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.974841,
+        "centroid_lon": 77.550783
+    },
+    "208": {
+        "total_incidents": 12,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.977954,
+        "centroid_lon": 77.54473
+    },
+    "209": {
+        "total_incidents": 17,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.954873,
+        "centroid_lon": 77.585678
+    },
+    "210": {
+        "total_incidents": 21,
+        "closure_rate": 0.285714,
+        "high_severity_rate": 0.809524,
+        "centroid_lat": 12.966157,
+        "centroid_lon": 77.574436
+    },
+    "211": {
+        "total_incidents": 20,
+        "closure_rate": 0.05,
+        "high_severity_rate": 0.25,
+        "centroid_lat": 12.961839,
+        "centroid_lon": 77.58819
+    },
+    "212": {
+        "total_incidents": 11,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.126976,
+        "centroid_lon": 77.613168
+    },
+    "213": {
+        "total_incidents": 21,
+        "closure_rate": 0.142857,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.956372,
+        "centroid_lon": 77.592166
+    },
+    "214": {
+        "total_incidents": 14,
+        "closure_rate": 0.285714,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.966981,
+        "centroid_lon": 77.594868
+    },
+    "215": {
+        "total_incidents": 43,
+        "closure_rate": 0.116279,
+        "high_severity_rate": 0.604651,
+        "centroid_lat": 12.963171,
+        "centroid_lon": 77.595683
+    },
+    "216": {
+        "total_incidents": 60,
+        "closure_rate": 0.183333,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.041902,
+        "centroid_lon": 77.613086
+    },
+    "217": {
+        "total_incidents": 33,
+        "closure_rate": 0.030303,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.030538,
+        "centroid_lon": 77.630911
+    },
+    "218": {
+        "total_incidents": 51,
+        "closure_rate": 0.058824,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.03762,
+        "centroid_lon": 77.626576
+    },
+    "219": {
+        "total_incidents": 174,
+        "closure_rate": 0.178161,
+        "high_severity_rate": 0.965517,
+        "centroid_lat": 12.965776,
+        "centroid_lon": 77.585641
+    },
+    "220": {
+        "total_incidents": 12,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.968376,
+        "centroid_lon": 77.591568
+    },
+    "221": {
+        "total_incidents": 41,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.041274,
+        "centroid_lon": 77.622107
+    },
+    "222": {
+        "total_incidents": 11,
+        "closure_rate": 0.363636,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.039998,
+        "centroid_lon": 77.624154
+    },
+    "223": {
+        "total_incidents": 21,
+        "closure_rate": 0.142857,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.9763,
+        "centroid_lon": 77.609308
+    },
+    "224": {
+        "total_incidents": 12,
+        "closure_rate": 0.083333,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.974881,
+        "centroid_lon": 77.613637
+    },
+    "225": {
+        "total_incidents": 48,
+        "closure_rate": 0.104167,
+        "high_severity_rate": 0.833333,
+        "centroid_lat": 12.966826,
+        "centroid_lon": 77.608136
+    },
+    "226": {
+        "total_incidents": 27,
+        "closure_rate": 0.074074,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.990575,
+        "centroid_lon": 77.572448
+    },
+    "227": {
+        "total_incidents": 20,
+        "closure_rate": 0.05,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.987277,
+        "centroid_lon": 77.578931
+    },
+    "228": {
+        "total_incidents": 13,
+        "closure_rate": 0.076923,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.971835,
+        "centroid_lon": 77.606882
+    },
+    "229": {
+        "total_incidents": 11,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.970892,
+        "centroid_lon": 77.604783
+    },
+    "230": {
+        "total_incidents": 53,
+        "closure_rate": 0.018868,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.069579,
+        "centroid_lon": 77.592882
+    },
+    "231": {
+        "total_incidents": 11,
+        "closure_rate": 0.090909,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.077451,
+        "centroid_lon": 77.592412
+    },
+    "232": {
+        "total_incidents": 23,
+        "closure_rate": 0.043478,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.116259,
+        "centroid_lon": 77.607655
+    },
+    "233": {
+        "total_incidents": 27,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.121848,
+        "centroid_lon": 77.61079
+    },
+    "234": {
+        "total_incidents": 23,
+        "closure_rate": 0.130435,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.974157,
+        "centroid_lon": 77.570084
+    },
+    "235": {
+        "total_incidents": 12,
+        "closure_rate": 0.25,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.968294,
+        "centroid_lon": 77.568213
+    },
+    "236": {
+        "total_incidents": 12,
+        "closure_rate": 0.25,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.98318,
+        "centroid_lon": 77.576797
+    },
+    "237": {
+        "total_incidents": 16,
+        "closure_rate": 0.25,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.964127,
+        "centroid_lon": 77.570045
+    },
+    "238": {
+        "total_incidents": 11,
+        "closure_rate": 0.181818,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 13.026458,
+        "centroid_lon": 77.580262
+    },
+    "239": {
+        "total_incidents": 18,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.976441,
+        "centroid_lon": 77.564543
+    },
+    "240": {
+        "total_incidents": 22,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.947707,
+        "centroid_lon": 77.533989
+    },
+    "241": {
+        "total_incidents": 26,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.084887,
+        "centroid_lon": 77.594301
+    },
+    "242": {
+        "total_incidents": 10,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.090065,
+        "centroid_lon": 77.59646
+    },
+    "243": {
+        "total_incidents": 13,
+        "closure_rate": 0.538462,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.984903,
+        "centroid_lon": 77.57464
+    },
+    "244": {
+        "total_incidents": 13,
+        "closure_rate": 0.153846,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.984812,
+        "centroid_lon": 77.57219
+    },
+    "245": {
+        "total_incidents": 23,
+        "closure_rate": 0.086957,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.979728,
+        "centroid_lon": 77.602671
+    },
+    "246": {
+        "total_incidents": 18,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.109656,
+        "centroid_lon": 77.603822
+    },
+    "247": {
+        "total_incidents": 11,
+        "closure_rate": 0.090909,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.982055,
+        "centroid_lon": 77.564373
+    },
+    "248": {
+        "total_incidents": 17,
+        "closure_rate": 0.058824,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.976581,
+        "centroid_lon": 77.599024
+    },
+    "249": {
+        "total_incidents": 12,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.976513,
+        "centroid_lon": 77.601549
+    },
+    "250": {
+        "total_incidents": 16,
+        "closure_rate": 0.125,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.962737,
+        "centroid_lon": 77.565777
+    },
+    "251": {
+        "total_incidents": 25,
+        "closure_rate": 0.12,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.961214,
+        "centroid_lon": 77.559676
+    },
+    "252": {
+        "total_incidents": 67,
+        "closure_rate": 0.104478,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.980518,
+        "centroid_lon": 77.571443
+    },
+    "253": {
+        "total_incidents": 11,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.982375,
+        "centroid_lon": 77.567814
+    },
+    "254": {
+        "total_incidents": 10,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.960338,
+        "centroid_lon": 77.556912
+    },
+    "255": {
+        "total_incidents": 27,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.98227,
+        "centroid_lon": 77.594106
+    },
+    "256": {
+        "total_incidents": 36,
+        "closure_rate": 0.083333,
+        "high_severity_rate": 0.972222,
+        "centroid_lat": 12.957429,
+        "centroid_lon": 77.55198
+    },
+    "257": {
+        "total_incidents": 26,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.958961,
+        "centroid_lon": 77.555405
+    },
+    "258": {
+        "total_incidents": 17,
+        "closure_rate": 0.058824,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.958122,
+        "centroid_lon": 77.553869
+    },
+    "259": {
+        "total_incidents": 20,
+        "closure_rate": 0.05,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.054696,
+        "centroid_lon": 77.593453
+    },
+    "260": {
+        "total_incidents": 23,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.104259,
+        "centroid_lon": 77.600715
+    },
+    "261": {
+        "total_incidents": 17,
+        "closure_rate": 0.176471,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.950921,
+        "centroid_lon": 77.537264
+    },
+    "262": {
+        "total_incidents": 12,
+        "closure_rate": 0.083333,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.983289,
+        "centroid_lon": 77.595643
+    },
+    "263": {
+        "total_incidents": 25,
+        "closure_rate": 0.08,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.983685,
+        "centroid_lon": 77.596996
+    },
+    "264": {
+        "total_incidents": 12,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.956639,
+        "centroid_lon": 77.548895
+    },
+    "265": {
+        "total_incidents": 37,
+        "closure_rate": 0.108108,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.986054,
+        "centroid_lon": 77.5884
+    },
+    "266": {
+        "total_incidents": 26,
+        "closure_rate": 0.076923,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.04984,
+        "centroid_lon": 77.593163
+    },
+    "267": {
+        "total_incidents": 22,
+        "closure_rate": 0.136364,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.974836,
+        "centroid_lon": 77.576615
+    },
+    "268": {
+        "total_incidents": 31,
+        "closure_rate": 0.096774,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.99299,
+        "centroid_lon": 77.584887
+    },
+    "269": {
+        "total_incidents": 44,
+        "closure_rate": 0.022727,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.094298,
+        "centroid_lon": 77.597005
+    },
+    "270": {
+        "total_incidents": 16,
+        "closure_rate": 0.1875,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.097851,
+        "centroid_lon": 77.598807
+    },
+    "271": {
+        "total_incidents": 11,
+        "closure_rate": 0.181818,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.046451,
+        "centroid_lon": 77.591497
+    },
+    "272": {
+        "total_incidents": 19,
+        "closure_rate": 0.105263,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.95588,
+        "centroid_lon": 77.546106
+    },
+    "273": {
+        "total_incidents": 14,
+        "closure_rate": 0.071429,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.042969,
+        "centroid_lon": 77.590523
+    },
+    "274": {
+        "total_incidents": 10,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.007065,
+        "centroid_lon": 77.583872
+    },
+    "275": {
+        "total_incidents": 27,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.003614,
+        "centroid_lon": 77.583935
+    },
+    "276": {
+        "total_incidents": 16,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.954166,
+        "centroid_lon": 77.543726
+    },
+    "277": {
+        "total_incidents": 55,
+        "closure_rate": 0.018182,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.952918,
+        "centroid_lon": 77.541473
+    },
+    "278": {
+        "total_incidents": 27,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.010584,
+        "centroid_lon": 77.583689
+    },
+    "279": {
+        "total_incidents": 85,
+        "closure_rate": 0.035294,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.036056,
+        "centroid_lon": 77.589054
+    },
+    "280": {
+        "total_incidents": 18,
+        "closure_rate": 0.111111,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.028821,
+        "centroid_lon": 77.586321
+    },
+    "281": {
+        "total_incidents": 28,
+        "closure_rate": 0.142857,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.996549,
+        "centroid_lon": 77.584699
+    },
+    "282": {
+        "total_incidents": 18,
+        "closure_rate": 0.055556,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.016378,
+        "centroid_lon": 77.583984
+    },
+    "283": {
+        "total_incidents": 46,
+        "closure_rate": 0.043478,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.014486,
+        "centroid_lon": 77.584003
+    },
+    "284": {
+        "total_incidents": 40,
+        "closure_rate": 0.025,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.023723,
+        "centroid_lon": 77.584954
+    },
+    "285": {
+        "total_incidents": 36,
+        "closure_rate": 0.027778,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 13.019478,
+        "centroid_lon": 77.584052
+    },
+    "286": {
+        "total_incidents": 21,
+        "closure_rate": 0.0,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.981124,
+        "centroid_lon": 77.586423
+    },
+    "287": {
+        "total_incidents": 31,
+        "closure_rate": 0.064516,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.999832,
+        "centroid_lon": 77.584014
+    },
+    "288": {
+        "total_incidents": 26,
+        "closure_rate": 0.0,
+        "high_severity_rate": 1.0,
+        "centroid_lat": 12.998646,
+        "centroid_lon": 77.584238
+    },
+    "289": {
+        "total_incidents": 14,
+        "closure_rate": 0.071429,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.977175,
+        "centroid_lon": 77.585753
+    },
+    "290": {
+        "total_incidents": 37,
+        "closure_rate": 0.27027,
+        "high_severity_rate": 0.0,
+        "centroid_lat": 12.975767,
+        "centroid_lon": 77.58735
+    }
+}

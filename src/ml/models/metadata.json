@@ -1,0 +1,48 @@
+{
+    "version": "1.0.0",
+    "release_status": "production",
+    "severity_model": {
+        "algorithm": "CatBoostClassifier",
+        "features": [
+            "event_type",
+            "event_cause",
+            "veh_type",
+            "police_station",
+            "geohash",
+            "corridor",
+            "hour",
+            "day_of_week",
+            "latitude_clean",
+            "longitude_clean"
+        ],
+        "target": "priority_encoded"
+    },
+    "closure_model": {
+        "algorithm": "CatBoostClassifier",
+        "features": [
+            "latitude_clean",
+            "longitude_clean",
+            "geohash",
+            "corridor",
+            "police_station",
+            "hour",
+            "day_of_week",
+            "event_cause",
+            "veh_type",
+            "closure_rate_by_cause",
+            "closure_rate_by_corridor"
+        ],
+        "target": "closure_encoded",
+        "weights": "Balanced"
+    },
+    "similarity_engine": {
+        "model_name": "all-MiniLM-L6-v2",
+        "backend": "FAISS IndexFlatIP",
+        "pca_components": 20
+    },
+    "spatial_clustering": {
+        "algorithm": "HDBSCAN",
+        "min_cluster_size": 10,
+        "min_samples": 5
+    }
+}

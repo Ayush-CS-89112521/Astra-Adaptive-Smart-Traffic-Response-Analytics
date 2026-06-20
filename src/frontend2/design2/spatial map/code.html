@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ASTRA | Spatial Map &amp; Road Network</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: EB Garamond & Manrope -->
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#faf5ee",
+                        "outline-variant": "#d8d0c8",
+                        "on-surface-variant": "#605850",
+                        "on-background": "#3a302a",
+                        "tertiary-container": "#d47070",
+                        "surface-container-high": "#ece6dc",
+                        "secondary-container": "#eae2da",
+                        "on-tertiary-fixed": "#2e1515",
+                        "tertiary-fixed-dim": "#e8a0a0",
+                        "primary": "#c2652a",
+                        "primary-fixed-dim": "#f0a878",
+                        "on-primary-fixed": "#401a08",
+                        "surface-dim": "#dcd6cc",
+                        "secondary": "#78706a",
+                        "surface-tint": "#c2652a",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#3a2020",
+                        "surface-variant": "#ece6dc",
+                        "inverse-primary": "#f0a878",
+                        "inverse-on-surface": "#faf5ee",
+                        "on-secondary-fixed": "#2a2420",
+                        "on-secondary-container": "#605850",
+                        "primary-fixed": "#fbe8d8",
+                        "on-surface": "#3a302a",
+                        "tertiary-fixed": "#fce0e0",
+                        "tertiary": "#8c3c3c",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#7a1a10",
+                        "surface-container": "#f2ece4",
+                        "inverse-surface": "#3a302a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#e08850",
+                        "on-error": "#ffffff",
+                        "error": "#c0392b",
+                        "surface-container-low": "#f6f0e8",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#fce4e0",
+                        "surface-bright": "#faf5ee",
+                        "background": "#faf5ee"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.8rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["EB Garamond", "serif"],
+                        "display": ["EB Garamond", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; background-color: #faf5ee; color: #3a302a; }
+        .map-overlay-blur { backdrop-filter: blur(8px); background-color: rgba(250, 245, 238, 0.85); }
+        .sidebar-active { background-color: #eae2da; color: #605850; font-weight: 700; border-radius: 0.5rem; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #d8d0c8; border-radius: 10px; }
+        .bento-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .bento-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(58, 48, 42, 0.06); }
+    </style>
+</head>
+<body class="flex min-h-screen overflow-hidden">
+<!-- SideNavBar (JSON Derived) -->
+<!-- Rule: SideNav is fixed left, h-screen, bg-surface-container-low -->
+<aside class="fixed left-0 top-0 h-full flex flex-col p-4 z-40 w-64 bg-surface-container-low border-r border-outline-variant/60">
+<div class="mb-8 px-2">
+<h1 class="font-headline text-xl font-bold text-primary tracking-tight">ASTRA</h1>
+<p class="font-body text-xs text-on-surface-variant/70 uppercase tracking-widest mt-1">Bengaluru Traffic Control</p>
+</div>
+<nav class="flex-1 space-y-1 overflow-y-auto custom-scrollbar">
+<!-- Labels from JSON: ["Portal Entry", "Simulation Console", "Diagnostics Panel", "Spatial Map", "Operations Dashboard"] -->
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:bg-surface-container-high transition-all font-body font-medium text-sm" href="#">
+<span class="material-symbols-outlined">home</span>
+                Portal Entry
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:bg-surface-container-high transition-all font-body font-medium text-sm" href="#">
+<span class="material-symbols-outlined">rebase_edit</span>
+                Simulation Console
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:bg-surface-container-high transition-all font-body font-medium text-sm" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                Diagnostics Panel
+            </a>
+<!-- ACTIVE STATE LOGIC: Spatial Map is the current screen -->
+<a class="flex items-center gap-3 px-3 py-2.5 bg-secondary-container text-on-secondary-container rounded-lg font-bold scale-95 duration-150 font-body text-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">map</span>
+                Spatial Map
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:bg-surface-container-high transition-all font-body font-medium text-sm" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Operations Dashboard
+            </a>
+</nav>
+<div class="mt-auto border-t border-outline-variant/30 pt-4 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:bg-surface-container-high transition-all font-body font-medium text-sm" href="#">
+<span class="material-symbols-outlined">sensors</span>
+                System Health
+            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-surface-variant hover:bg-surface-container-high transition-all font-body font-medium text-sm" href="#">
+<span class="material-symbols-outlined">help</span>
+                Support
+            </a>
+<div class="flex items-center gap-3 mt-4 px-3 py-2">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-lg">account_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-on-surface">Operator 042</span>
+<span class="text-[10px] text-on-surface-variant">Tier-1 Admin</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-64 relative h-screen bg-surface">
+<!-- Top Navigation Overlay -->
+<header class="absolute top-0 left-0 right-0 z-30 px-8 py-4 flex justify-between items-center pointer-events-none">
+<div class="pointer-events-auto">
+<div class="bg-surface/90 map-overlay-blur px-5 py-2 rounded-full border border-outline-variant/40 shadow-sm flex items-center gap-4">
+<span class="font-headline text-lg font-semibold text-primary">Spatial Clustering</span>
+<div class="h-4 w-[1px] bg-outline-variant"></div>
+<div class="flex items-center gap-4 text-xs font-medium text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> Live Feeds</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary"></span> 12 Critical Incidents</span>
+</div>
+</div>
+</div>
+<div class="flex gap-3 pointer-events-auto">
+<button class="bg-surface/90 map-overlay-blur p-2.5 rounded-xl border border-outline-variant/40 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">layers</span>
+</button>
+<button class="bg-surface/90 map-overlay-blur p-2.5 rounded-xl border border-outline-variant/40 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</header>
+<!-- The Interactive Map (Styled Dark Map Simulation) -->
+<div class="absolute inset-0 z-10 bg-[#1a1c1e]">
+<!-- Map Background Placeholder -->
+<div class="w-full h-full relative overflow-hidden" data-location="Bengaluru, India" style="">
+<div class="absolute inset-0 opacity-40 grayscale contrast-125" data-alt="A high-fidelity satellite view of Bengaluru city at night, showcasing complex road networks, dense urban sprawl, and glowing orange streetlights that create a web-like pattern across the dark landscape. The lighting is dramatic, with deep shadows and vibrant amber highlights reflecting the Sahara design palette's warmth and luxury." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKQJ9-k3VVBQkim_dfloEV_Isw8WTZT06yyymI_c7Mhvmb_QpNrGgiRAvCek-hMpnIvWShDxAF73QotbM49_CqWvsQIcChC_wZ7t5CofWKG4oqKFB6jofvOW32npuQe63Md_GfiLzxnnBEOGCd3LVQ4ZHCVi6r-DOC309JbsbAkyUbFxIbTd4D0udQh1OFWV35www2rxlnDA6I02jHWIs37yeOhc_lqctEoEHgcFDcoHFvaPbPPwh2rhOsrh4SOWFZ4WLuoBvBVnPZ')"></div>
+<!-- SVG Overlay for Roads and Clusters -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" preserveaspectratio="xMidYMid slice" viewbox="0 0 1000 600">
+<!-- Road Networks -->
+<path d="M100 200 L300 250 L500 220 L700 280 L900 260" fill="none" opacity="0.8" stroke="#c2652a" stroke-dasharray="8 4" stroke-linecap="round" stroke-width="4">
+<animate attributename="stroke-dashoffset" dur="1s" from="12" repeatcount="indefinite" to="0"></animate>
+</path>
+<path d="M100 200 C 150 150, 450 150, 500 220" fill="none" opacity="0.4" stroke="#78706a" stroke-width="2"></path>
+<path d="M500 220 C 550 350, 850 350, 900 260" fill="none" opacity="0.4" stroke="#78706a" stroke-width="2"></path>
+<!-- HDBSCAN Clusters -->
+<circle cx="300" cy="250" fill="url(#grad1)" opacity="0.6" r="40"></circle>
+<circle cx="700" cy="280" fill="url(#grad1)" opacity="0.4" r="55"></circle>
+<circle cx="150" cy="400" fill="url(#grad2)" opacity="0.5" r="25"></circle>
+<defs>
+<radialgradient cx="50%" cy="50%" id="grad1" r="50%">
+<stop offset="0%" style="stop-color:#c2652a; stop-opacity:0.8"></stop>
+<stop offset="100%" style="stop-color:#c2652a; stop-opacity:0"></stop>
+</radialgradient>
+<radialgradient cx="50%" cy="50%" id="grad2" r="50%">
+<stop offset="0%" style="stop-color:#8c3c3c; stop-opacity:0.8"></stop>
+<stop offset="100%" style="stop-color:#8c3c3c; stop-opacity:0"></stop>
+</radialgradient>
+</defs>
+</svg>
+<!-- Interactive Markers -->
+<div class="absolute top-[240px] left-[290px] group pointer-events-auto">
+<div class="w-5 h-5 bg-primary rounded-full border-2 border-surface animate-pulse cursor-pointer"></div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-48 opacity-0 group-hover:opacity-100 transition-opacity bg-surface p-3 rounded-xl border border-outline-variant shadow-xl">
+<h4 class="font-bold text-xs text-primary mb-1">Hotspot ID: #BGL-402</h4>
+<p class="text-[10px] text-on-surface-variant">Congestion Density: High (0.84)</p>
+<p class="text-[10px] font-bold text-tertiary mt-1">Risk Score: 9.2/10</p>
+</div>
+</div>
+<div class="absolute top-[210px] left-[490px] group pointer-events-auto">
+<div class="w-4 h-4 bg-tertiary rounded-full border-2 border-surface cursor-pointer"></div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-56 opacity-0 group-hover:opacity-100 transition-opacity bg-surface p-3 rounded-xl border border-outline-variant shadow-xl">
+<div class="flex justify-between items-start mb-2">
+<span class="px-2 py-0.5 bg-error-container text-error text-[9px] font-extrabold rounded-full">CRITICAL INCIDENT</span>
+<span class="text-[9px] text-on-surface-variant">2 mins ago</span>
+</div>
+<h4 class="font-headline text-sm font-bold text-on-background">Silk Board Intersection</h4>
+<p class="text-[10px] text-on-surface-variant leading-relaxed mt-1">Multi-vehicle collision blocking two lanes. Traffic diverted to Madiwala underpass.</p>
+<div class="mt-2 flex gap-2">
+<button class="flex-1 py-1.5 bg-primary text-on-primary text-[10px] font-bold rounded-lg">Dispatch Unit</button>
+<button class="px-2 py-1.5 border border-outline-variant rounded-lg"><span class="material-symbols-outlined text-xs">close</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Analytics Panel (Bento Style) -->
+<section class="absolute bottom-6 left-6 right-6 z-30 flex gap-4 h-56 overflow-hidden pointer-events-none">
+<!-- Path Legend Card -->
+<div class="w-1/3 bg-surface/90 map-overlay-blur p-6 rounded-2xl border border-outline-variant/60 bento-card pointer-events-auto flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline text-lg font-bold text-on-background">Path Analysis</h3>
+<span class="material-symbols-outlined text-primary">route</span>
+</div>
+<div class="space-y-4 overflow-y-auto custom-scrollbar flex-1 pr-2">
+<div class="flex items-center gap-4">
+<div class="w-1 h-10 bg-primary rounded-full"></div>
+<div class="flex-1">
+<p class="text-xs font-bold text-on-surface">Optimal Diversion (B-12)</p>
+<div class="flex gap-3 text-[10px] text-on-surface-variant mt-1">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">schedule</span> 14 min</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">straighten</span> 3.2 km</span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-xs font-bold text-primary">-8 min</span>
+</div>
+</div>
+<div class="flex items-center gap-4 opacity-60">
+<div class="w-1 h-10 bg-secondary rounded-full"></div>
+<div class="flex-1">
+<p class="text-xs font-bold text-on-surface">Original Route (A-1)</p>
+<div class="flex gap-3 text-[10px] text-on-surface-variant mt-1">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">schedule</span> 22 min</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">straighten</span> 2.8 km</span>
+</div>
+</div>
+<div class="text-right text-xs font-bold">Base</div>
+</div>
+</div>
+</div>
+<!-- Hotspot Clusters Card -->
+<div class="w-1/3 bg-surface/90 map-overlay-blur p-6 rounded-2xl border border-outline-variant/60 bento-card pointer-events-auto">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline text-lg font-bold text-on-background">HDBSCAN Clusters</h3>
+<div class="flex items-center gap-1.5 bg-secondary-container px-2 py-1 rounded-full">
+<span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+<span class="text-[9px] font-bold text-on-secondary-container">LIVE</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/30">
+<p class="text-[10px] text-on-surface-variant font-medium">Cluster Density</p>
+<p class="text-2xl font-headline font-bold text-primary mt-1">0.92</p>
+<div class="w-full bg-outline-variant/40 h-1 mt-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[92%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-xl border border-outline-variant/30">
+<p class="text-[10px] text-on-surface-variant font-medium">Mean Risk Score</p>
+<p class="text-2xl font-headline font-bold text-tertiary mt-1">7.4</p>
+<div class="w-full bg-outline-variant/40 h-1 mt-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[74%]"></div>
+</div>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-[10px]">
+<span class="text-on-surface-variant italic">Refining clusters every 30s...</span>
+<button class="text-primary font-bold hover:underline">View All</button>
+</div>
+</div>
+<!-- Global Stats / Quick Action -->
+<div class="w-1/3 bg-primary text-on-primary p-6 rounded-2xl border border-primary-container bento-card pointer-events-auto relative overflow-hidden">
+
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-xl font-bold">Network Summary</h3>
+<p class="text-xs text-on-primary/80 mt-1">System status: Optimizing Flow</p>
+</div>
+<div class="flex items-end justify-between">
+<div>
+<span class="text-4xl font-headline font-bold leading-none">88%</span>
+<p class="text-[10px] font-medium opacity-80 mt-1 uppercase tracking-wider">Efficiency Index</p>
+</div>
+<button class="bg-on-primary text-primary px-4 py-2 rounded-lg text-xs font-bold shadow-lg hover:scale-105 transition-transform">
+                            Deploy Global Diversion
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Side Toolbelt -->
+<div class="absolute right-6 top-24 z-30 flex flex-col gap-3 pointer-events-auto">
+<button class="w-10 h-10 bg-surface/90 map-overlay-blur rounded-full border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:text-primary shadow-sm transition-all">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+<button class="w-10 h-10 bg-surface/90 map-overlay-blur rounded-full border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:text-primary shadow-sm transition-all">
+<span class="material-symbols-outlined text-lg">remove</span>
+</button>
+<div class="h-4"></div>
+<button class="w-10 h-10 bg-surface/90 map-overlay-blur rounded-full border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:text-primary shadow-sm transition-all">
+<span class="material-symbols-outlined text-lg">my_location</span>
+</button>
+<button class="w-10 h-10 bg-surface/90 map-overlay-blur rounded-full border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:text-primary shadow-sm transition-all">
+<span class="material-symbols-outlined text-lg">3d_rotation</span>
+</button>
+</div>
+</main>
+<!-- UI Interaction Scripts -->
+<script>
+        // Simple scale effect for interactive markers
+        document.querySelectorAll('.pointer-events-auto > div').forEach(marker => {
+            marker.addEventListener('mouseenter', () => {
+                marker.classList.add('scale-125');
+            });
+            marker.addEventListener('mouseleave', () => {
+                marker.classList.remove('scale-125');
+            });
+        });
+
+        // Theme toggle logic placeholder
+        const toggleTheme = () => {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
+</body></html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ASTRA | Global Traffic Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#504840",
+                        "on-tertiary-container": "#3a2020",
+                        "surface-container": "#f2ece4",
+                        "secondary-fixed-dim": "#cec6be",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#fce0e0",
+                        "on-tertiary-fixed": "#2e1515",
+                        "on-secondary-container": "#605850",
+                        "secondary-fixed": "#eae2da",
+                        "inverse-primary": "#f0a878",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#d8d0c8",
+                        "inverse-on-surface": "#faf5ee",
+                        "secondary-container": "#eae2da",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#fbe8d8",
+                        "primary-fixed-dim": "#f0a878",
+                        "primary": "#c2652a",
+                        "on-primary-container": "#fbe8d8",
+                        "primary-container": "#e08850",
+                        "on-surface": "#3a302a",
+                        "on-background": "#3a302a",
+                        "tertiary-fixed-dim": "#e8a0a0",
+                        "surface-container-highest": "#e6e0d6",
+                        "surface-container-low": "#f6f0e8",
+                        "surface-tint": "#c2652a",
+                        "on-surface-variant": "#605850",
+                        "on-error-container": "#7a1a10",
+                        "surface-bright": "#faf5ee",
+                        "error-container": "#fce4e0",
+                        "error": "#c0392b",
+                        "tertiary": "#8c3c3c",
+                        "surface-variant": "#ece6dc",
+                        "outline": "#9a9088",
+                        "surface": "#faf5ee",
+                        "on-tertiary-fixed-variant": "#6e3030",
+                        "inverse-surface": "#3a302a",
+                        "on-secondary": "#ffffff",
+                        "background": "#faf5ee",
+                        "on-secondary-fixed": "#2a2420",
+                        "on-primary-fixed": "#401a08",
+                        "on-primary-fixed-variant": "#8a4518",
+                        "surface-dim": "#dcd6cc",
+                        "surface-container-high": "#ece6dc",
+                        "tertiary-container": "#d47070",
+                        "secondary": "#78706a",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["EB Garamond", "serif"],
+                        "display": ["EB Garamond", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-shadow {
+            box-shadow: 0 2px 16px rgba(58, 48, 42, 0.04);
+        }
+        .grain-overlay {
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        .nav-blur {
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 py-4 max-w-full bg-background/80 backdrop-blur-md border-b border-outline-variant/60">
+<div class="font-headline text-2xl font-bold text-primary">ASTRA</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label text-sm uppercase tracking-wider text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Predict</a>
+<a class="font-label text-sm uppercase tracking-wider text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Simulate</a>
+<a class="font-label text-sm uppercase tracking-wider text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Respond</a>
+<a class="font-label text-sm uppercase tracking-wider text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Intelligence</a>
+<a class="font-label text-sm uppercase tracking-wider text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Architecture</a>
+</div>
+<button class="bg-primary text-white px-6 py-2.5 rounded-lg font-label text-sm uppercase tracking-widest font-bold hover:opacity-90 active:scale-95 transition-all">
+            Launch Command Centre
+        </button>
+</nav>
+<main class="relative pt-20">
+<div class="grain-overlay fixed inset-0 z-0"></div>
+<!-- Hero Section -->
+<section class="relative h-[921px] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+<!-- 3D Globe Background Integration -->
+<div class="absolute inset-0 z-0 opacity-40 mix-blend-multiply pointer-events-none" id="hero-globe-container"></div>
+<div class="relative z-10 max-w-5xl">
+<p class="font-label text-xs uppercase tracking-[0.4em] text-primary mb-6">Global Intelligence Paradigm</p>
+<h1 class="font-display text-7xl md:text-9xl text-on-surface leading-tight tracking-tight mb-8">
+                    Predict. <br/>
+<span class="italic text-primary">Simulate.</span> Respond.
+                </h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                    The next evolution of urban mobility. Orchestrating chaotic networks into crystalline patterns of efficiency through predictive reasoning.
+                </p>
+<div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-lg font-label text-sm uppercase tracking-widest font-bold shadow-xl shadow-primary/20 hover:-translate-y-0.5 transition-all">
+                        Request System Access
+                    </button>
+<button class="border border-outline px-10 py-4 rounded-lg font-label text-sm uppercase tracking-widest font-bold hover:bg-surface-container transition-all">
+                        View Documentation
+                    </button>
+</div>
+</div>
+<!-- Subtle Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+<span class="font-label text-[10px] uppercase tracking-widest">Scroll</span>
+<div class="w-px h-12 bg-on-surface-variant"></div>
+</div>
+</section>
+<!-- System Core: Metrics -->
+<section class="relative py-32 px-8 bg-surface-container-low/50">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div>
+<h2 class="font-display text-5xl md:text-6xl text-on-surface leading-[1.1] mb-8">
+                        Deep Analysis &amp; <br/>
+<span class="italic font-normal">Predictive Reasoning</span>
+</h2>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed mb-12 max-w-lg">
+                        ASTRA ingest multi-modal telemetry streams to generate hyper-accurate forecasts of metropolitan congestion, identifying bottlenecks before they materialize.
+                    </p>
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white soft-shadow border border-outline-variant/40 w-fit">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div>
+<p class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Real-time Node Monitoring</p>
+<p class="text-sm font-bold">142,800 Active Sensors</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="bg-white p-10 rounded-2xl soft-shadow border border-outline-variant/30 flex flex-col justify-center transform hover:scale-105 transition-transform duration-500">
+<span class="font-label text-xs uppercase tracking-widest text-primary mb-2">Accuracy</span>
+<div class="font-display text-6xl text-on-surface font-light">94<span class="text-2xl ml-1 text-primary">%</span></div>
+<p class="text-xs text-on-surface-variant mt-4 leading-relaxed">Predictive precision across Tier-1 urban corridors.</p>
+</div>
+<div class="bg-white p-10 rounded-2xl soft-shadow border border-outline-variant/30 flex flex-col justify-center mt-12 transform hover:scale-105 transition-transform duration-500">
+<span class="font-label text-xs uppercase tracking-widest text-primary mb-2">Latency</span>
+<div class="font-display text-6xl text-on-surface font-light">&lt;2<span class="text-2xl ml-1 text-primary">ms</span></div>
+<p class="text-xs text-on-surface-variant mt-4 leading-relaxed">Inference speed optimized for critical edge deployments.</p>
+</div>
+<div class="bg-white p-10 rounded-2xl soft-shadow border border-outline-variant/30 flex flex-col justify-center transform hover:scale-105 transition-transform duration-500">
+<span class="font-label text-xs uppercase tracking-widest text-primary mb-2">Scale</span>
+<div class="font-display text-6xl text-on-surface font-light">12<span class="text-2xl ml-1 text-primary">TB</span></div>
+<p class="text-xs text-on-surface-variant mt-4 leading-relaxed">Daily telemetry ingestion from disparate sources.</p>
+</div>
+<div class="bg-white p-10 rounded-2xl soft-shadow border border-outline-variant/30 flex flex-col justify-center mt-12 transform hover:scale-105 transition-transform duration-500">
+<span class="font-label text-xs uppercase tracking-widest text-primary mb-2">Uptime</span>
+<div class="font-display text-6xl text-on-surface font-light">99<span class="text-2xl ml-1 text-primary">.9</span></div>
+<p class="text-xs text-on-surface-variant mt-4 leading-relaxed">System resilience under high-concurrency loads.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Capability Matrix: Bento Grid -->
+<section class="py-32 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20 text-center">
+<h2 class="font-display text-5xl text-on-surface mb-6">Capability Matrix</h2>
+<div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+<p class="font-body text-on-surface-variant text-lg">Sophisticated toolsets for the modern traffic engineer.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="col-span-1 md:col-span-2 bg-surface-container p-10 rounded-3xl flex flex-col justify-between group overflow-hidden relative">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">auto_awesome</span>
+<h3 class="font-display text-3xl mb-4">Neural Signal Optimization</h3>
+<p class="font-body text-on-surface-variant max-w-md leading-relaxed">Automated signal timing adjustments powered by reinforcement learning to minimize idle time at key intersections.</p>
+</div>
+<div class="mt-8 flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                            View Protocol <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+<div class="absolute right-0 bottom-0 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[12rem]">hub</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-10 rounded-3xl border border-outline-variant/40 soft-shadow flex flex-col">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-6">emergency</span>
+<h3 class="font-display text-3xl mb-4">Crisis Response</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">Dynamic rerouting of emergency vehicles through preemptive traffic clearing across the grid.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-10 rounded-3xl border border-outline-variant/40 soft-shadow flex flex-col">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">query_stats</span>
+<h3 class="font-display text-3xl mb-4">Historical Forensics</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">Deep-dive analysis into seasonal patterns and historical incidents to harden future infrastructure.</p>
+</div>
+<!-- Card 4 -->
+<div class="col-span-1 md:col-span-2 bg-surface-container-high p-10 rounded-3xl flex flex-col justify-between group overflow-hidden relative">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">simulation</span>
+<h3 class="font-display text-3xl mb-4">Scenario Simulation</h3>
+<p class="font-body text-on-surface-variant max-w-md leading-relaxed">Run millions of 'what-if' scenarios in seconds to evaluate the impact of road closures or new developments before execution.</p>
+</div>
+<div class="mt-8 flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                            Launch Simulator <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+<div class="absolute right-[-2rem] top-[-2rem] opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[15rem]">analytics</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Live Operational Environment -->
+<section class="relative py-32 px-8 overflow-hidden bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="flex flex-col lg:flex-row gap-16 items-center">
+<div class="lg:w-1/3">
+<div class="inline-block px-4 py-1 bg-primary/10 rounded-full mb-6">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                                Live System Feed
+                            </span>
+</div>
+<h2 class="font-display text-5xl text-on-surface mb-8 leading-tight">Operational Environment: <span class="italic">Bengaluru</span></h2>
+<div class="space-y-6">
+<div class="p-6 bg-white border border-outline-variant/60 rounded-xl soft-shadow">
+<p class="text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2">Current Grid Load</p>
+<div class="flex justify-between items-end">
+<span class="text-3xl font-display">Optimal</span>
+<span class="text-primary font-bold">12% Margin</span>
+</div>
+</div>
+<div class="p-6 bg-white border border-outline-variant/60 rounded-xl soft-shadow">
+<p class="text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2">Active Incidents</p>
+<div class="flex justify-between items-end">
+<span class="text-3xl font-display">02</span>
+<span class="text-tertiary font-bold">Mitigating</span>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-2/3 w-full h-[600px] rounded-3xl overflow-hidden border border-outline-variant/40 soft-shadow relative bg-surface-container">
+<!-- Operational Globe Integration -->
+<div class="absolute inset-0 z-0" id="operational-globe-container"></div>
+<!-- UI Overlays -->
+<div class="absolute top-6 right-6 flex flex-col gap-3 z-10">
+<button class="w-12 h-12 bg-white/90 backdrop-blur rounded-lg flex items-center justify-center text-on-surface soft-shadow hover:bg-white transition-colors"><span class="material-symbols-outlined">add</span></button>
+<button class="w-12 h-12 bg-white/90 backdrop-blur rounded-lg flex items-center justify-center text-on-surface soft-shadow hover:bg-white transition-colors"><span class="material-symbols-outlined">remove</span></button>
+<button class="w-12 h-12 bg-white/90 backdrop-blur rounded-lg flex items-center justify-center text-on-surface soft-shadow hover:bg-white transition-colors"><span class="material-symbols-outlined">layers</span></button>
+</div>
+<div class="absolute bottom-6 left-6 p-4 bg-white/90 backdrop-blur rounded-xl soft-shadow border border-outline-variant/20 max-w-sm z-10">
+<p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-2">Anomaly Detected: Hosur Road</p>
+<p class="text-sm">Abnormal density detected at Silk Board junction. Dispatching adaptive signal sequence ID: 772-B.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Intelligence Architecture -->
+<section class="py-32 px-8">
+<div class="max-w-7xl mx-auto text-center mb-20">
+<h2 class="font-display text-5xl text-on-surface mb-6">Intelligence Architecture</h2>
+<p class="font-body text-on-surface-variant text-lg">A seamless pipeline from raw data to actionable intelligence.</p>
+</div>
+<div class="max-w-6xl mx-auto relative px-4">
+<div class="absolute top-1/2 left-0 w-full h-px bg-outline-variant/40 -translate-y-1/2 hidden md:block"></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+<div class="bg-background flex flex-col items-center group">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors duration-500">sensors</span>
+</div>
+<h4 class="font-display text-xl mb-2">Ingestion</h4>
+<p class="text-xs text-on-surface-variant text-center px-4">IoT, Satellite, &amp; Probe Data Inflow</p>
+</div>
+<div class="bg-background flex flex-col items-center group">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors duration-500">memory</span>
+</div>
+<h4 class="font-display text-xl mb-2">Processing</h4>
+<p class="text-xs text-on-surface-variant text-center px-4">Edge Inference &amp; Spatial Normalization</p>
+</div>
+<div class="bg-background flex flex-col items-center group">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors duration-500">psychology</span>
+</div>
+<h4 class="font-display text-xl mb-2">Reasoning</h4>
+<p class="text-xs text-on-surface-variant text-center px-4">Transformer-based Predictive Modeling</p>
+</div>
+<div class="bg-background flex flex-col items-center group">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors duration-500">terminal</span>
+</div>
+<h4 class="font-display text-xl mb-2">Actuation</h4>
+<p class="text-xs text-on-surface-variant text-center px-4">API Hook &amp; Control System Override</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-40 px-8 relative overflow-hidden bg-primary-container text-on-primary-container">
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<h2 class="font-display text-6xl md:text-8xl mb-12">Ready to deploy?</h2>
+<p class="font-body text-xl mb-12 opacity-90 max-w-xl mx-auto">Join the vanguard of global urban intelligence. Request your sandbox environment today.</p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="bg-on-primary-container text-primary px-12 py-5 rounded-lg font-label text-sm uppercase tracking-widest font-extrabold hover:scale-105 transition-transform">
+                        Initiate Onboarding
+                    </button>
+<button class="border border-on-primary-container/30 px-12 py-5 rounded-lg font-label text-sm uppercase tracking-widest font-extrabold hover:bg-white/10 transition-colors">
+                        Speak with Engineering
+                    </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-surface-container-low border-t border-outline-variant/60">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="font-headline text-xl font-bold text-on-surface">ASTRA</div>
+<p class="font-body text-sm text-on-surface-variant">© 2024 ASTRA Systems. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-tertiary hover:underline transition-all" href="#">Network Status</a>
+<a class="font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-tertiary hover:underline transition-all" href="#">API Docs</a>
+<a class="font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-tertiary hover:underline transition-all" href="#">Privacy Protocol</a>
+<a class="font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-tertiary hover:underline transition-all" href="#">Security Whitepaper</a>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full border border-outline-variant/40 flex items-center justify-center hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">share</span>
+</div>
+<div class="w-10 h-10 rounded-full border border-outline-variant/40 flex items-center justify-center hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">public</span>
+</div>
+</div>
+</footer>
+</main>
+<script>
+        // Three.js Globe Functionality refined for Sahara theme
+        function initGlobe(containerId, options = {}) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+            camera.position.z = options.zoom || 220;
+
+            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(width, height);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            container.appendChild(renderer.domElement);
+
+            // Sahara Color Palette: Warm Golden/Copper (#c2652a)
+            const saharaPrimary = 0xc2652a;
+            const saharaLight = 0xfbe8d8;
+            const saharaDark = 0x401a08;
+
+            // Global Globe
+            const geometry = new THREE.SphereGeometry(80, 64, 64);
+            const material = new THREE.MeshPhongMaterial({
+                color: saharaLight,
+                transparent: true,
+                opacity: 0.15,
+                wireframe: true,
+                wireframeLinewidth: 0.5
+            });
+            const globe = new THREE.Mesh(geometry, material);
+            scene.add(globe);
+
+            // Atmosphere glow (Golden sun-baked effect)
+            const glowGeo = new THREE.SphereGeometry(82, 64, 64);
+            const glowMat = new THREE.MeshBasicMaterial({
+                color: saharaPrimary,
+                transparent: true,
+                opacity: 0.08,
+                side: THREE.BackSide
+            });
+            const glow = new THREE.Mesh(glowGeo, glowMat);
+            scene.add(glow);
+
+            // Paths/Dots (Active Intelligence markers)
+            for (let i = 0; i < 60; i++) {
+                const lat = (Math.random() - 0.5) * Math.PI;
+                const lon = (Math.random() - 0.5) * Math.PI * 2;
+                const r = 80;
+                const x = r * Math.cos(lat) * Math.cos(lon);
+                const y = r * Math.sin(lat);
+                const z = r * Math.cos(lat) * Math.sin(lon);
+                
+                const dotGeo = new THREE.SphereGeometry(0.6, 8, 8);
+                const dotMat = new THREE.MeshBasicMaterial({ 
+                    color: saharaPrimary,
+                    transparent: true,
+                    opacity: 0.8
+                });
+                const dot = new THREE.Mesh(dotGeo, dotMat);
+                dot.position.set(x, y, z);
+                globe.add(dot);
+            }
+
+            const light = new THREE.PointLight(saharaPrimary, 1.2);
+            light.position.set(100, 100, 100);
+            scene.add(light);
+            
+            const ambLight = new THREE.AmbientLight(saharaLight, 0.4);
+            scene.add(ambLight);
+
+            function animate() {
+                requestAnimationFrame(animate);
+                globe.rotation.y += options.rotationSpeed || 0.0015;
+                globe.rotation.x += (options.rotationSpeed || 0.0015) / 2;
+                renderer.render(scene, camera);
+            }
+
+            window.addEventListener('resize', () => {
+                const w = container.clientWidth;
+                const h = container.clientHeight;
+                camera.aspect = w / h;
+                camera.updateProjectionMatrix();
+                renderer.setSize(w, h);
+            });
+
+            animate();
+        }
+
+        // Initialize globes when window loads
+        window.addEventListener('DOMContentLoaded', () => {
+            initGlobe('hero-globe-container', { zoom: 200, rotationSpeed: 0.001 });
+            initGlobe('operational-globe-container', { zoom: 180, rotationSpeed: 0.002 });
+        });
+
+        // Smooth reveal animations on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+
+        // Simple mouse follow effect for background glow
+        const glowElement = document.createElement('div');
+        glowElement.className = 'fixed w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none z-[-1] opacity-0 transition-opacity duration-1000';
+        document.body.appendChild(glowElement);
+
+        document.addEventListener('mousemove', (e) => {
+            glowElement.style.opacity = '1';
+            glowElement.style.left = e.clientX - 300 + 'px';
+            glowElement.style.top = e.clientY - 300 + 'px';
+        });
+    </script>
+</body></html>

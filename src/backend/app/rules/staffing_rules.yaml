@@ -1,0 +1,103 @@
+# ASTRA — Staffing Rules
+# Keyed by event_cause → vehicle_type → severity → {officers, tow_trucks}
+# All lookups fall back to "default" if exact key is not found.
+
+vehicle_breakdown:
+  heavy_vehicle:
+    high:
+      officers: 4
+      tow_trucks: 2
+    low:
+      officers: 2
+      tow_trucks: 1
+  light_vehicle:
+    high:
+      officers: 3
+      tow_trucks: 1
+    low:
+      officers: 2
+      tow_trucks: 1
+  two_wheeler:
+    high:
+      officers: 2
+      tow_trucks: 0
+    low:
+      officers: 1
+      tow_trucks: 0
+  default:
+    high:
+      officers: 3
+      tow_trucks: 1
+    low:
+      officers: 2
+      tow_trucks: 0
+
+accident:
+  heavy_vehicle:
+    high:
+      officers: 5
+      tow_trucks: 2
+    low:
+      officers: 3
+      tow_trucks: 1
+  light_vehicle:
+    high:
+      officers: 4
+      tow_trucks: 1
+    low:
+      officers: 3
+      tow_trucks: 1
+  two_wheeler:
+    high:
+      officers: 3
+      tow_trucks: 0
+    low:
+      officers: 2
+      tow_trucks: 0
+  default:
+    high:
+      officers: 4
+      tow_trucks: 1
+    low:
+      officers: 3
+      tow_trucks: 0
+
+construction:
+  default:
+    high:
+      officers: 3
+      tow_trucks: 0
+    low:
+      officers: 2
+      tow_trucks: 0
+
+event:
+  default:
+    high:
+      officers: 6
+      tow_trucks: 0
+    low:
+      officers: 3
+      tow_trucks: 0
+
+waterlogging:
+  default:
+    high:
+      officers: 3
+      tow_trucks: 0
+    low:
+      officers: 2
+      tow_trucks: 0
+
+pothole:
+  default:
+    high:
+      officers: 2
+      tow_trucks: 0
+    low:
+      officers: 1
+      tow_trucks: 0
+
+default:
+  officers: 2
+  tow_trucks: 0

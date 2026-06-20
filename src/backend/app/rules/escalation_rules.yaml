@@ -1,0 +1,33 @@
+# ASTRA — Escalation Rules
+# Rules are evaluated in DESCENDING priority order.
+# The first rule whose ALL conditions are satisfied determines the escalation level.
+# Levels: CRITICAL > HIGH > MEDIUM > LOW
+
+thresholds:
+  - level: CRITICAL
+    priority: 4
+    min_closure_prob: 0.75
+    min_risk_score: 7.0
+    severity_includes: ["High"]
+    description: "Imminent full road closure in a high-risk hotspot. Senior command required."
+
+  - level: HIGH
+    priority: 3
+    min_closure_prob: 0.55
+    min_risk_score: 5.0
+    severity_includes: ["High"]
+    description: "High closure probability with elevated hotspot risk. Traffic control activation required."
+
+  - level: MEDIUM
+    priority: 2
+    min_closure_prob: 0.35
+    min_risk_score: 3.0
+    severity_includes: ["High", "Low"]
+    description: "Moderate closure risk. Standard field response with monitoring."
+
+  - level: LOW
+    priority: 1
+    min_closure_prob: 0.0
+    min_risk_score: 0.0
+    severity_includes: ["High", "Low"]
+    description: "Routine incident. Normal field officer response."

@@ -1,0 +1,65 @@
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+bin/
+lib/
+include/
+pip-selfcheck.json
+
+# Python Caches & Compiled Files
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Node / Frontend Build & Dependencies
+**/node_modules/
+**/dist/
+**/build/
+.eslintcache
+.parcel-cache
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ML Training Metadata & Artifacts
+**/catboost_info/
+**/lightning_logs/
+# Optionally ignore large raw training CSV data if models are pre-compiled
+# **/src/ml/*.csv
+
+# Local Configuration & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# Logs, Audits, & Reports
+**/logs/
+*.log
+**/audit/
+
+# Historical Drafts & Archive Docs
+**/historical_drafts/
+
+# Temp & Editor Files
+**/scratch/
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+.DS_Store
+Thumbs.db

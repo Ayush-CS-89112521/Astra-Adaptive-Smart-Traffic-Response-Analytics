@@ -1,0 +1,59 @@
+# ASTRA — Barricade Rules
+# Keyed by event_cause → severity → {barricades, notes}
+# Falls back to "default" key if exact match not found.
+
+vehicle_breakdown:
+  high:
+    barricades: 6
+    notes: "Place barricades 50m before and after the vehicle to protect oncoming traffic."
+  low:
+    barricades: 4
+    notes: "Barricade the blocked lane only."
+
+accident:
+  high:
+    barricades: 8
+    notes: "Secure a 100m safety perimeter. Coordinate with emergency services."
+  low:
+    barricades: 6
+    notes: "Barricade both the impact zone and adjoining lane."
+
+construction:
+  high:
+    barricades: 10
+    notes: "Full lane closure barricades required. Set up warning signage 200m ahead."
+  low:
+    barricades: 6
+    notes: "Partial lane closure. Ensure reflective barricades visible at night."
+
+event:
+  high:
+    barricades: 12
+    notes: "Cordon entry and exit points. Coordinate with event organisers."
+  low:
+    barricades: 8
+    notes: "Barricade pedestrian overflow areas."
+
+waterlogging:
+  high:
+    barricades: 8
+    notes: "Barricade flooded road sections. Deploy warning signs at all approach roads."
+  low:
+    barricades: 4
+    notes: "Mark waterlogged sections with reflective cones."
+
+pothole:
+  high:
+    barricades: 4
+    notes: "Protect pothole area from vehicular traffic."
+  low:
+    barricades: 2
+    notes: "Mark pothole with cones."
+
+default:
+  high:
+    barricades: 6
+    notes: ""
+  low:
+    barricades: 4
+    notes: ""

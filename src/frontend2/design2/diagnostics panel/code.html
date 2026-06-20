@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ASTRA | Incident Diagnostics &amp; Explainability</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#faf5ee",
+                        "outline-variant": "#d8d0c8",
+                        "on-surface-variant": "#605850",
+                        "on-background": "#3a302a",
+                        "tertiary-container": "#d47070",
+                        "surface-container-high": "#ece6dc",
+                        "secondary-container": "#eae2da",
+                        "on-tertiary-fixed": "#2e1515",
+                        "tertiary-fixed-dim": "#e8a0a0",
+                        "primary": "#c2652a",
+                        "primary-fixed-dim": "#f0a878",
+                        "on-primary-fixed": "#401a08",
+                        "surface-dim": "#dcd6cc",
+                        "secondary": "#78706a",
+                        "surface-tint": "#c2652a",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#3a2020",
+                        "surface-variant": "#ece6dc",
+                        "inverse-primary": "#f0a878",
+                        "inverse-on-surface": "#faf5ee",
+                        "on-secondary-fixed": "#2a2420",
+                        "on-secondary-container": "#605850",
+                        "primary-fixed": "#fbe8d8",
+                        "on-surface": "#3a302a",
+                        "tertiary-fixed": "#fce0e0",
+                        "tertiary": "#8c3c3c",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#7a1a10",
+                        "on-tertiary-fixed-variant": "#6e3030",
+                        "surface-container": "#f2ece4",
+                        "inverse-surface": "#3a302a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#e08850",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#8a4518",
+                        "error": "#c0392b",
+                        "surface-container-low": "#f6f0e8",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#fce4e0",
+                        "surface-bright": "#faf5ee",
+                        "background": "#faf5ee"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Eb Garamond"],
+                        "display": ["Eb Garamond"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #faf5ee; color: #3a302a; }
+        .font-headline { font-family: 'EB Garamond', serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+        }
+        .shap-bar { transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); }
+        .pulse-soft { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="flex min-h-screen overflow-x-hidden">
+<!-- SideNavBar Component (JSON Map) -->
+<nav class="fixed left-0 top-0 h-full flex flex-col p-4 z-40 bg-surface-container-low border-r border-outline-variant/60 w-64">
+<div class="mb-10 px-2 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<div>
+<h1 class="font-headline text-xl font-bold text-primary">ASTRA</h1>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Bengaluru Traffic Control</p>
+</div>
+</div>
+<div class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg font-medium group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">home</span>
+<span class="text-sm">Portal Entry</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg font-medium group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">rebase_edit</span>
+<span class="text-sm">Simulation Console</span>
+</a>
+<!-- ACTIVE: Diagnostics Panel -->
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-lg font-bold scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="text-sm">Diagnostics Panel</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg font-medium group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">map</span>
+<span class="text-sm">Spatial Map</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg font-medium group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">dashboard</span>
+<span class="text-sm">Operations Dashboard</span>
+</a>
+</div>
+<div class="pt-6 mt-6 border-t border-outline-variant/30 space-y-2">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg text-sm" href="#">
+<span class="material-symbols-outlined text-sm">sensors</span>
+<span>System Health</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high transition-all rounded-lg text-sm" href="#">
+<span class="material-symbols-outlined text-sm">help</span>
+<span>Support</span>
+</a>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="ml-64 flex-1 p-8 lg:p-12">
+<!-- Header Section -->
+<header class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<div class="flex items-center gap-2 text-primary font-bold mb-2">
+<span class="material-symbols-outlined text-base">emergency_home</span>
+<span class="text-xs uppercase tracking-widest">Incident Case #992-BLR</span>
+</div>
+<h2 class="font-headline text-5xl text-on-surface leading-tight mb-4">Incident Explainability &amp; Diagnostics</h2>
+<p class="text-on-surface-variant leading-relaxed max-w-xl">
+                    Utilizing SHAP (SHapley Additive exPlanations) values to deconstruct model decisions. Transparent AI reasoning for urban traffic congestion events.
+                </p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-lg font-bold shadow-sm hover:opacity-90 transition-opacity" id="requestExplanation">
+<span class="material-symbols-outlined">psychology</span>
+                    Request SHAP Explanation
+                </button>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left: Model Meta & Status -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Status Card -->
+<section class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/40">
+<h3 class="text-xs uppercase tracking-[0.2em] font-bold text-on-surface-variant mb-6">Diagnostic Status</h3>
+<div class="space-y-6" id="statusContainer">
+<!-- Default Success State -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-700">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Analysis Complete</h4>
+<p class="text-sm text-on-surface-variant">Global explainability kernels synced at 14:02:11 IST.</p>
+<span class="inline-block mt-2 px-2 py-1 bg-green-50 text-[10px] font-bold text-green-700 rounded border border-green-200">SUCCESS</span>
+</div>
+</div>
+<!-- Example of Pending State (Hidden) -->
+<div class="hidden flex items-start gap-4 opacity-50">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary pulse-soft">
+<span class="material-symbols-outlined">hourglass_empty</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Computing SHAP Values</h4>
+<p class="text-sm text-on-surface-variant">Integrating 1,200 feature permutations...</p>
+</div>
+</div>
+<!-- Example of Failed State (Hidden) -->
+<div class="hidden flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined">error</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Calculation Error</h4>
+<p class="text-sm text-on-surface-variant">Memory overflow in kernel #04. </p>
+<button class="mt-2 text-xs font-bold text-primary underline underline-offset-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">refresh</span> Retry Analysis
+                                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Model Identity Card -->
+<section class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/40 flex-1">
+<h3 class="text-xs uppercase tracking-[0.2em] font-bold text-on-surface-variant mb-6">Model Signature</h3>
+<div class="space-y-6">
+<div>
+<label class="text-[10px] uppercase text-on-surface-variant font-bold block mb-1">Architecture</label>
+<div class="font-headline text-2xl text-primary">Astra-Congestion-v4.2</div>
+<p class="text-xs text-on-surface-variant">XGBoost Ensemble with Temporal Graph Attention</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="text-[10px] uppercase text-on-surface-variant font-bold block mb-1">Prediction</label>
+<div class="font-bold text-lg text-on-surface">Gridlock High</div>
+</div>
+<div>
+<label class="text-[10px] uppercase text-on-surface-variant font-bold block mb-1">Confidence</label>
+<div class="font-bold text-lg text-on-surface">94.2%</div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/30">
+<p class="text-[11px] text-on-surface-variant leading-relaxed">
+                                Prediction generated using live telemetry from 4,102 IoT sensors across the Hebbal-ORR corridor.
+                            </p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right: SHAP Feature Importance Chart -->
+<div class="lg:col-span-8">
+<section class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/40 h-full">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="text-xs uppercase tracking-[0.2em] font-bold text-on-surface-variant">Feature Impact Analysis</h3>
+<p class="text-sm text-on-surface-variant mt-1">Relative contribution of top 8 variables to the current prediction.</p>
+</div>
+<div class="flex gap-4 items-center">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-primary rounded-full"></div>
+<span class="text-[10px] font-bold">Increases Severity</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-tertiary-container rounded-full"></div>
+<span class="text-[10px] font-bold">Decreases Severity</span>
+</div>
+</div>
+</div>
+<!-- Feature Table/Chart -->
+<div class="space-y-6">
+<!-- Feature Row 1 -->
+<div class="grid grid-cols-12 items-center gap-4 group">
+<div class="col-span-3">
+<div class="font-bold text-sm text-on-surface">crowd_size</div>
+<div class="text-[10px] text-on-surface-variant uppercase">8,400+ Units</div>
+</div>
+<div class="col-span-1 text-right font-mono text-xs text-primary font-bold">+0.42</div>
+<div class="col-span-7 h-3 bg-surface-container-high rounded-full overflow-hidden flex items-center">
+<div class="shap-bar h-full bg-primary" style="width: 85%;"></div>
+</div>
+<div class="col-span-1 flex justify-end">
+<span class="material-symbols-outlined text-primary text-lg" title="Increases Severity">trending_up</span>
+</div>
+</div>
+<!-- Feature Row 2 -->
+<div class="grid grid-cols-12 items-center gap-4">
+<div class="col-span-3">
+<div class="font-bold text-sm text-on-surface">event_cause</div>
+<div class="text-[10px] text-on-surface-variant uppercase">Road Maintenance</div>
+</div>
+<div class="col-span-1 text-right font-mono text-xs text-primary font-bold">+0.38</div>
+<div class="col-span-7 h-3 bg-surface-container-high rounded-full overflow-hidden">
+<div class="shap-bar h-full bg-primary" style="width: 76%;"></div>
+</div>
+<div class="col-span-1 flex justify-end">
+<span class="material-symbols-outlined text-primary text-lg">trending_up</span>
+</div>
+</div>
+<!-- Feature Row 3 -->
+<div class="grid grid-cols-12 items-center gap-4">
+<div class="col-span-3">
+<div class="font-bold text-sm text-on-surface">weather_index</div>
+<div class="text-[10px] text-on-surface-variant uppercase">Heavy Rain</div>
+</div>
+<div class="col-span-1 text-right font-mono text-xs text-primary font-bold">+0.25</div>
+<div class="col-span-7 h-3 bg-surface-container-high rounded-full overflow-hidden">
+<div class="shap-bar h-full bg-primary" style="width: 50%;"></div>
+</div>
+<div class="col-span-1 flex justify-end">
+<span class="material-symbols-outlined text-primary text-lg">trending_up</span>
+</div>
+</div>
+<!-- Feature Row 4 -->
+<div class="grid grid-cols-12 items-center gap-4">
+<div class="col-span-3">
+<div class="font-bold text-sm text-on-surface">signal_timing</div>
+<div class="text-[10px] text-on-surface-variant uppercase">Adaptive On</div>
+</div>
+<div class="col-span-1 text-right font-mono text-xs text-tertiary font-bold">-0.18</div>
+<div class="col-span-7 h-3 bg-surface-container-high rounded-full overflow-hidden flex justify-end">
+<div class="shap-bar h-full bg-tertiary-container" style="width: 36%;"></div>
+</div>
+<div class="col-span-1 flex justify-end">
+<span class="material-symbols-outlined text-tertiary text-lg">trending_down</span>
+</div>
+</div>
+<!-- Feature Row 5 -->
+<div class="grid grid-cols-12 items-center gap-4">
+<div class="col-span-3">
+<div class="font-bold text-sm text-on-surface">day_of_week</div>
+<div class="text-[10px] text-on-surface-variant uppercase">Friday (Peak)</div>
+</div>
+<div class="col-span-1 text-right font-mono text-xs text-primary font-bold">+0.12</div>
+<div class="col-span-7 h-3 bg-surface-container-high rounded-full overflow-hidden">
+<div class="shap-bar h-full bg-primary" style="width: 24%;"></div>
+</div>
+<div class="col-span-1 flex justify-end">
+<span class="material-symbols-outlined text-primary text-lg">trending_up</span>
+</div>
+</div>
+<!-- Feature Row 6 -->
+<div class="grid grid-cols-12 items-center gap-4">
+<div class="col-span-3">
+<div class="font-bold text-sm text-on-surface">incident_duration</div>
+<div class="text-[10px] text-on-surface-variant uppercase">45 mins</div>
+</div>
+<div class="col-span-1 text-right font-mono text-xs text-primary font-bold">+0.09</div>
+<div class="col-span-7 h-3 bg-surface-container-high rounded-full overflow-hidden">
+<div class="shap-bar h-full bg-primary" style="width: 18%;"></div>
+</div>
+<div class="col-span-1 flex justify-end">
+<span class="material-symbols-outlined text-primary text-lg">trending_up</span>
+</div>
+</div>
+<!-- Feature Row 7 -->
+<div class="grid grid-cols-12 items-center gap-4">
+<div class="col-span-3">
+<div class="font-bold text-sm text-on-surface">police_presence</div>
+<div class="text-[10px] text-on-surface-variant uppercase">3 Units Active</div>
+</div>
+<div class="col-span-1 text-right font-mono text-xs text-tertiary font-bold">-0.05</div>
+<div class="col-span-7 h-3 bg-surface-container-high rounded-full overflow-hidden flex justify-end">
+<div class="shap-bar h-full bg-tertiary-container" style="width: 10%;"></div>
+</div>
+<div class="col-span-1 flex justify-end">
+<span class="material-symbols-outlined text-tertiary text-lg">trending_down</span>
+</div>
+</div>
+<!-- Feature Row 8 -->
+<div class="grid grid-cols-12 items-center gap-4">
+<div class="col-span-3">
+<div class="font-bold text-sm text-on-surface">public_transit_v</div>
+<div class="text-[10px] text-on-surface-variant uppercase">Nominal</div>
+</div>
+<div class="col-span-1 text-right font-mono text-xs text-tertiary font-bold">-0.02</div>
+<div class="col-span-7 h-3 bg-surface-container-high rounded-full overflow-hidden flex justify-end">
+<div class="shap-bar h-full bg-tertiary-container" style="width: 4%;"></div>
+</div>
+<div class="col-span-1 flex justify-end">
+<span class="material-symbols-outlined text-tertiary text-lg">trending_down</span>
+</div>
+</div>
+</div>
+<!-- Visual Separator -->
+<div class="mt-12 flex items-center gap-6">
+<div class="flex-1 h-px bg-outline-variant/60"></div>
+<div class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold whitespace-nowrap">Decision Logic Map</div>
+<div class="flex-1 h-px bg-outline-variant/60"></div>
+</div>
+<!-- Logic Visualizer -->
+<div class="mt-8 flex justify-center">
+<div class="relative w-full max-w-lg aspect-[16/6] bg-surface-container rounded-lg overflow-hidden border border-outline-variant/30 group">
+
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-surface/80 backdrop-blur-md px-4 py-2 rounded border border-primary/20 text-xs font-bold text-on-surface">
+                                    Base Value: 0.12 → Output: 0.94
+                                </div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Footer / Context Imagery -->
+<footer class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 relative h-48 rounded-xl overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10"></div>
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110" data-alt="A cinematic, warm-toned aerial view of a futuristic smart city intersection at twilight. Glow-trails of traffic lights weave through a minimalist architectural grid. The lighting is golden and soft, emphasizing a luxurious, high-tech urban planning aesthetic with burnt sienna and linen tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8DC61ShLfbnA0nSUAP2XXJYkklZMa7CPz1vTRi44pRCrfPYTLZpQltzyVtdZyHoM6StMgSF3TeAf5nG24G1tYEpOVIa_sgFwscZ8w-DVAlQc0qdKya0Puf1EOgqVQkvzHo2E-IquN0Ruiv0sNWEu5KZsHONc2XtpycMGkvW5w0Ug90iU_J8SQdEX-0LnG6cNsYLooQq1CGB7EzhfPJMMDIcpnG6o1lZcqGFtESetFPuyunP_sFZYz-ymZ79PubsinOoZzQdjv-HZ_')"></div>
+<div class="absolute bottom-6 left-8 z-20">
+<p class="font-headline text-2xl text-on-surface leading-none">Corridor Overview</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mt-1">Live Telemetry Visualization</p>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-8 rounded-xl flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-3xl mb-4">settings_suggest</span>
+<p class="text-sm font-medium leading-relaxed">
+                        Astra's explainability module allows operators to trace each decision back to specific real-world sensor activations.
+                    </p>
+</div>
+<a class="inline-flex items-center gap-2 font-bold text-sm border-b-2 border-on-primary w-fit mt-4" href="#">
+                    View Logs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</footer>
+</main>
+<!-- Micro-interaction Script -->
+<script>
+        document.getElementById('requestExplanation').addEventListener('click', function() {
+            const btn = this;
+            const originalContent = btn.innerHTML;
+            
+            // Interaction State
+            btn.innerHTML = `<span class="material-symbols-outlined animate-spin">refresh</span> Processing...`;
+            btn.style.opacity = '0.7';
+            btn.disabled = true;
+
+            // Simulate API logic
+            setTimeout(() => {
+                btn.innerHTML = `<span class="material-symbols-outlined">check</span> Synced`;
+                btn.classList.replace('bg-primary', 'bg-green-700');
+                
+                // Refresh Bars Animation
+                const bars = document.querySelectorAll('.shap-bar');
+                bars.forEach(bar => {
+                    const currentWidth = bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = currentWidth;
+                    }, 50);
+                });
+
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.replace('bg-green-700', 'bg-primary');
+                    btn.style.opacity = '1';
+                    btn.disabled = false;
+                }, 3000);
+            }, 1200);
+        });
+    </script>
+</body></html>

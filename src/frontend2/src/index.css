@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-body bg-surface text-on-background min-h-screen;
+    background-color: #faf5ee;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #d8d0c8;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #c2652a;
+}
+
+/* Glass Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px border-outline-variant/60;
+}
+
+/* Soft Shadow */
+.soft-shadow {
+  box-shadow: 0 2px 16px rgba(58, 48, 42, 0.04);
+}
+
+/* Grain Overlay (Paper effect) */
+.grain-overlay {
+  position: relative;
+}
+.grain-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url('https://transparenttextures.com/patterns/natural-paper.png');
+  z-index: 5;
+}
+
+/* Nav Blur Header */
+.map-overlay-blur {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(250, 245, 238, 0.85);
+}
+
+/* SHAP Bar animation transition */
+.shap-bar-transition {
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Pulse Soft Animation */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.95); }
+}
+.pulse-soft {
+  animation: pulse-soft 2s infinite ease-in-out;
+}
+
+/* Animate Pulse Dot */
+@keyframes pulse-dot {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0.5; }
+}
+.animate-pulse-dot {
+  animation: pulse-dot 1.5s infinite ease-in-out;
+}
+
+/* Map tiles layout configuration */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #1a1c1e !important;
+}
+
+/* ═══════════════════════════════════════════════
+   CINEMATIC LANDING PAGE — ANIMATION SYSTEM
+   ═══════════════════════════════════════════════ */
+
+/* Word Mask Reveal */
+.word-mask {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  padding-bottom: 0.06em;
+  line-height: 1.1;
+}
+.word-inner {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.word-inner.revealed {
+  animation: wordReveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes wordReveal {
+  from { transform: translateY(110%); opacity: 0; }
+  to   { transform: translateY(0%);   opacity: 1; }
+}
+
+/* CSS-driven auto-reveal (no JS class toggle needed) */
+.word-inner-auto {
+  animation: wordReveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Section Scroll Fade-Up */
+.section-fade {
+  opacity: 0;
+  transform: translateY(36px);
+  will-change: transform, opacity;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade Up In */
+@keyframes fadeUpIn {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Globe Entry */
+@keyframes globeScaleIn {
+  0%   { transform: scale(0.85); opacity: 0; }
+  60%  { transform: scale(1.02); opacity: 1; }
+  80%  { transform: scale(0.99); }
+  100% { transform: scale(1.0);  opacity: 1; }
+}
+.globe-enter {
+  animation: globeScaleIn 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s both;
+}
+
+/* Hero Dot-Grid Background */
+.hero-grid-bg {
+  background-image: radial-gradient(circle, rgba(194,101,42,0.065) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Scroll Indicator Bounce */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0);   opacity: 0.5; }
+  50%       { transform: translateY(8px); opacity: 1;   }
+}
+.scroll-bounce { animation: scrollBounce 2s ease-in-out infinite; }
+
+/* Bento Card 3D Hover */
+.bento-card {
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.45s ease;
+  will-change: transform;
+}
+.bento-card:hover {
+  transform: translateY(-7px) rotateX(3deg) rotateY(-1deg);
+  box-shadow: 0 24px 48px -12px rgba(194, 101, 42, 0.14),
+              0 8px 16px -4px rgba(58, 48, 42, 0.06);
+}
+.bento-card:hover .bento-icon {
+  animation: iconPulse 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes iconPulse {
+  0%   { transform: scale(1);    }
+  50%  { transform: scale(1.25); }
+  100% { transform: scale(1);    }
+}
+
+/* Diversion Route Draw */
+@keyframes routeDraw {
+  from { stroke-dashoffset: 800; }
+  to   { stroke-dashoffset: 0;   }
+}
+
+/* System Activate */
+@keyframes systemActivate {
+  0%   { opacity: 0; transform: scale(0.88); }
+  60%  { opacity: 1; transform: scale(1.04); }
+  100% { opacity: 1; transform: scale(1);    }
+}
+.system-activate { animation: systemActivate 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+/* Resource Icon Pop */
+@keyframes resourcePop {
+  0%   { transform: scale(0) translateY(12px); opacity: 0; }
+  70%  { transform: scale(1.1) translateY(-2px); opacity: 1; }
+  100% { transform: scale(1) translateY(0);    opacity: 1; }
+}
+
+/* Node Glow */
+@keyframes nodeGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(194,101,42,0.5); }
+  50%       { box-shadow: 0 0 0 10px rgba(194,101,42,0); }
+}
+.node-glow { animation: nodeGlow 2s infinite; }
+
+/* Status Bar Blink */
+@keyframes statusBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+.status-blink { animation: statusBlink 1.4s ease-in-out infinite; }
+
+/* Incident Appear */
+@keyframes incidentAppear {
+  0%   { transform: scale(0) translateY(-20px); opacity: 0; }
+  70%  { transform: scale(1.2) translateY(2px); opacity: 1; }
+  100% { transform: scale(1) translateY(0);     opacity: 1; }
+}
+
+/* Congestion Pulse */
+@keyframes congestionPulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  50%  { transform: scale(1.5); opacity: 0.3; }
+  100% { transform: scale(2);   opacity: 0;   }
+}
+
+/* Custom Leaflet Zoom Control Styling */
+.leaflet-bar {
+  border: 1px solid rgba(194, 101, 42, 0.35) !important;
+  box-shadow: 0 4px 12px rgba(58, 48, 42, 0.08) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  background-color: rgba(250, 245, 238, 0.95) !important;
+  backdrop-filter: blur(8px);
+}
+
+.leaflet-bar a {
+  background-color: transparent !important;
+  color: #c2652a !important;
+  border-bottom: 1px solid rgba(194, 101, 42, 0.15) !important;
+  width: 26px !important;
+  height: 26px !important;
+  line-height: 24px !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.leaflet-bar a:last-child {
+  border-bottom: none !important;
+}
+
+.leaflet-bar a:hover {
+  background-color: #c2652a !important;
+  color: #faf5ee !important;
+}
+
+.leaflet-bar a:active {
+  background-color: #a4501e !important;
+  transform: scale(0.92);
+}
+
+.leaflet-bar a.leaflet-disabled {
+  background-color: rgba(216, 208, 200, 0.4) !important;
+  color: rgba(194, 101, 42, 0.4) !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+

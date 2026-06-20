@@ -1,0 +1,45 @@
+# ASTRA Backend v1 — Python Dependencies
+# Install: pip install -r requirements.txt
+
+# --- Web Framework ---
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+
+# --- Authentication ---
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# --- Rate Limiting ---
+slowapi==0.1.9
+
+# --- Validation ---
+pydantic==2.7.1
+python-dotenv==1.0.1
+
+# --- ML Inference ---
+catboost==1.2.5
+faiss-cpu==1.8.0
+joblib==1.4.2
+scikit-learn==1.5.0
+numpy==1.26.4
+
+# --- NLP / Embedding ---
+sentence-transformers==3.0.1
+
+# --- Explainability ---
+shap==0.45.1
+
+# --- Routing ---
+networkx==3.3
+
+# --- Config / Serialization ---
+pyyaml==6.0.1
+python-multipart==0.0.9
+
+# --- Logging ---
+# structlog is optional; we use stdlib json logging
+
+# --- Spatial & Geohashing ---
+pygeohash==1.1.0
+
+
