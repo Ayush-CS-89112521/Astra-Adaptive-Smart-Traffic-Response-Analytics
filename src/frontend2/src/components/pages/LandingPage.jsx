@@ -40,8 +40,9 @@ function Navbar({ status }) {
         boxShadow: scrolled ? '0 1px 20px rgba(58,48,42,0.06)' : 'none',
       }}
     >
-      <div className="flex items-center gap-2.5">
-        <span className="font-headline text-2xl font-bold text-primary tracking-tight">ASTRA</span>
+      <div className="flex flex-col items-start">
+        <span className="font-headline text-2xl font-bold text-primary tracking-tight leading-none">ASTRA</span>
+        <span className="font-body text-[9px] text-primary uppercase tracking-widest mt-1 font-semibold opacity-85">Bengaluru Traffic Control</span>
       </div>
 
       <nav className="hidden md:flex items-center gap-8 text-xs font-semibold text-on-surface-variant">
