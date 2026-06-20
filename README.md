@@ -152,5 +152,4 @@ This script automatically:
 
 5.  **Access the Dashboard**:
     Open [http://localhost:5174](http://localhost:5174) in your browser.
-    *   **Operator Username**: `operator@astra.demo`
-    *   **Operator Password**: `AstraOps2024!`
+
