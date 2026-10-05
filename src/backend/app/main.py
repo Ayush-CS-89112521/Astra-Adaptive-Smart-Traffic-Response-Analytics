@@ -134,14 +134,24 @@ app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, rate_limit_exceeded_handler)
 
 # Configure CORS Middleware
-# Restricting to specific origins for security compliance
+# Permissive origin regex allows any Vercel domain and localhost
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.allowed_origins,
+    allow_origin_regex=r"https?://.*",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/", tags=["Health"])
+async def root():
+    """Root ping endpoint"""
+    return {"status": "ok", "service": "ASTRA Backend", "docs": "/docs", "version": "1.0.0"}
+
+@app.get("/health", tags=["Health"])
+async def root_health():
+    """Convenience root health endpoint"""
+    return {"status": "ok", "service": "ASTRA Backend"}
 
 # Attach API routers
 app.include_router(api_router)
