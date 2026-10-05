@@ -104,7 +104,7 @@ export default function SimulationConsole() {
     mapRef.current = map;
 
     // Dark theme matching tiles
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?key=cb1_4acy_1_49f10d171cc47f95b448cb4c', {
       maxZoom: 20
     }).addTo(map);
 
