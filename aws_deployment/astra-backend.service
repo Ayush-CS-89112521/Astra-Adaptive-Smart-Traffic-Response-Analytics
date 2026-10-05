@@ -1,0 +1,17 @@
+[Unit]
+Description=ASTRA Adaptive Traffic Analytics FastAPI Backend
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/Astra-Adaptive-Smart-Traffic-Response-Analytics/src/backend
+EnvironmentFile=/home/ubuntu/Astra-Adaptive-Smart-Traffic-Response-Analytics/src/backend/.env
+ExecStart=/home/ubuntu/Astra-Adaptive-Smart-Traffic-Response-Analytics/.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 1
+Restart=always
+RestartSec=5
+StandardOutput=append:/home/ubuntu/Astra-Adaptive-Smart-Traffic-Response-Analytics/src/backend/logs/backend.log
+StandardError=append:/home/ubuntu/Astra-Adaptive-Smart-Traffic-Response-Analytics/src/backend/logs/backend_err.log
+
+[Install]
+WantedBy=multi-user.target
