@@ -1,0 +1,27 @@
+# Root .dockerignore for Google Cloud Run
+.git/
+.gitignore
+.venv/
+venv/
+
+# Ignore frontend & docs
+src/frontend2/
+docs/
+aws_deployment/
+hf_deploy/
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Ignore raw CSV datasets (models in src/ml/models are already compiled)
+src/ml/*.csv
+
+# Local secrets & logs
+.env
+*.env
+logs/
+*.log

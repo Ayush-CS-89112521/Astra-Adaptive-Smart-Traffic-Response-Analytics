@@ -7,6 +7,7 @@ bin/
 lib/
 include/
 pip-selfcheck.json
+hf_deploy/.git/
 
 # Python Caches & Compiled Files
 **/__pycache__/
